@@ -72,11 +72,14 @@ nav.gnav a:hover{color:var(--enji)}
 @media(min-width:840px){nav.gnav{display:flex}}
 
 /* ---- ヒーロー(FV) ---- */
-/* fv-bg.webp が無い間は下のグラデーションが表示される(2層フォールバック) */
+/* 背景はSP/PCで別画像。無い間は下のグラデーションが表示される(2層フォールバック) */
 .hero{
   position:relative;overflow:hidden;
   background-image:url('images/fv-bg.webp'),linear-gradient(180deg,#F9F3E6 0%,#EEDDB9 62%,var(--sand) 100%);
-  background-size:cover,cover;background-position:center top,center;
+  background-size:cover,cover;background-position:center,center;
+}
+@media(min-width:840px){
+  .hero{background-image:url('images/fv-bg-pc.webp'),linear-gradient(180deg,#F9F3E6 0%,#EEDDB9 62%,var(--sand) 100%)}
 }
 .hero-inner{
   max-width:1040px;margin:0 auto;padding:48px 20px 56px;
