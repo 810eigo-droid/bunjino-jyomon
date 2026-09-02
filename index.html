@@ -75,9 +75,23 @@ nav.gnav a:hover{color:var(--enji)}
 .hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#F9F3E6 0%,#EEDDB9 62%,var(--sand) 100%)}
 .hero-inner{
   max-width:1040px;margin:0 auto;padding:48px 20px 56px;
-  display:grid;gap:28px;align-items:center;
+  display:grid;gap:30px;align-items:center;
 }
-@media(min-width:840px){.hero-inner{grid-template-columns:1.1fr .9fr;padding:72px 20px 88px}}
+/* スマホ: コピー → 土偶 → ボタン の順。PC: 左にコピー+ボタン、右に土偶 */
+.hero-copy{grid-area:copy}
+.hero-visual{grid-area:visual}
+.hero-btns{grid-area:btns;display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.hero-inner{grid-template-areas:"copy" "visual" "btns"}
+@media(min-width:840px){
+  .hero-inner{
+    grid-template-columns:1.1fr .9fr;
+    grid-template-areas:"copy visual" "btns visual";
+    column-gap:48px;row-gap:20px;
+    padding:72px 20px 88px;
+  }
+  .hero-copy{align-self:end}
+  .hero-btns{align-self:start;justify-content:flex-start}
+}
 .hero-copy .kicker{
   display:inline-block;background:var(--green);color:#F1EBDC;
   font-size:.78rem;font-weight:600;letter-spacing:.14em;
@@ -90,7 +104,6 @@ nav.gnav a:hover{color:var(--enji)}
 }
 .hero h1 .accent{color:var(--enji)}
 .hero .lede{margin-top:18px;color:var(--ink-soft);max-width:34em}
-.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
 .btn{
   display:inline-flex;align-items:center;gap:8px;
   font-weight:700;font-size:.92rem;padding:13px 26px;border-radius:999px;
@@ -336,10 +349,6 @@ section[id]{scroll-margin-top:64px}
       <span class="kicker">国分寺の縄文をあそぶ、大人と子どもの探偵団</span>
       <h1>国分寺には、実は<br><span class="accent">縄文の遺跡</span>が<br>いっぱい!</h1>
       <p class="lede">縄文時代のことを楽しく知り、街を楽しみ、探偵してゆく自由な集まりです。月に1回、土曜か日曜の午後。初心者さん大歓迎、子どもも大人もどなたでも。</p>
-      <div class="hero-btns">
-        <a class="btn btn-primary" href="#event">次回イベントを見る</a>
-        <a class="btn btn-ghost" href="#about">探偵団とは?</a>
-      </div>
     </div>
     <div class="hero-visual">
       <div class="fv-badges" aria-hidden="true">
@@ -350,6 +359,10 @@ section[id]{scroll-margin-top:64px}
         <img src="images/fv-dogu.webp" alt="恋ヶ窪で出土した土偶" width="1536" height="1024">
         <span class="hero-caption">恋ヶ窪出土の土偶・国分寺市</span>
       </div>
+    </div>
+    <div class="hero-btns">
+      <a class="btn btn-primary" href="#event">次回イベントを見る</a>
+      <a class="btn btn-ghost" href="#about">探偵団とは?</a>
     </div>
   </div>
 </div>
