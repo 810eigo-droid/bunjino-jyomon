@@ -317,6 +317,26 @@ footer .foot-dogu{display:flex;justify-content:center;margin-bottom:10px}
 /* ページ内アンカー位置調整 */
 section[id]{scroll-margin-top:64px}
 
+/* ---- スマホの文字サイズ調整(本文+1.5px / 備考+1px、見出しは据え置き) ---- */
+@media(max-width:839px){
+  body{font-size:16.5px}
+  .point p{font-size:calc(.92rem + 1.5px)}
+  .event-body .desc{font-size:calc(.9rem + 1.5px)}
+  .next-list li{font-size:calc(.9rem + 1.5px)}
+  .report-card .body p{font-size:calc(.85rem + 1.5px)}
+  .doc-list a{font-size:calc(.92rem + 1.5px)}
+  .contact-info p{font-size:calc(.9rem + 1.5px)}
+  .sec-head .sub{font-size:calc(.9rem + 1.5px)}
+  /* 備考・注記・キャプション類 */
+  .wp-note,.notice-note{font-size:calc(.72rem + 1px)}
+  .hero-caption{font-size:calc(.75rem + 1px)}
+  .chip{font-size:calc(.75rem + 1px)}
+  .doc-list small{font-size:calc(.75rem + 1px)}
+  .report-card time{font-size:calc(.75rem + 1px)}
+  .tag{font-size:calc(.7rem + 1px)}
+  footer{font-size:calc(.75rem + 1px)}
+}
+
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .btn,.doc-list a{transition:none}
