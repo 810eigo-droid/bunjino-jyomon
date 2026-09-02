@@ -227,7 +227,8 @@ section{padding:64px 0}
 .event-body .desc{font-size:.9rem;color:var(--ink-soft);margin-top:8px}
 .event-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 .chip{font-size:.75rem;font-weight:600;background:var(--pale);border:1px solid #C3D1BB;border-radius:999px;padding:4px 12px;color:#3E4A38}
-.event-body .btn{margin-top:18px;font-size:.85rem;padding:10px 22px}
+.event-body .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.event-body .btn{font-size:.85rem;padding:10px 22px}
 .event-next{margin-top:26px}
 .event-next h4{font-size:.85rem;letter-spacing:.15em;color:var(--ink-soft);margin-bottom:10px}
 .next-list{list-style:none;display:grid;gap:8px}
@@ -254,6 +255,24 @@ section{padding:64px 0}
 @media(min-width:720px){.gallery-grid{grid-template-columns:repeat(3,1fr);gap:14px}}
 .gallery-grid .frame{aspect-ratio:1}
 .gallery-more{text-align:center;margin-top:26px}
+
+/* ---- SNSリンクカード(過去の写真はSNSへ誘導) ---- */
+.sns-cards{display:grid;gap:14px;margin-top:28px}
+@media(min-width:720px){.sns-cards{grid-template-columns:1fr 1fr}}
+.sns-card{
+  display:flex;align-items:center;gap:16px;
+  background:var(--surface);border:1px solid var(--line);border-radius:12px;
+  padding:18px 20px;color:var(--ink);
+  transition:border-color .15s ease, transform .15s ease;
+}
+.sns-card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.sns-card .sns-ico{
+  flex:none;width:46px;height:46px;border-radius:12px;background:var(--green);
+  display:grid;place-items:center;color:var(--white);
+}
+.sns-card strong{font-family:"Zen Old Mincho",serif;font-size:1.02rem;display:block}
+.sns-card small{display:block;color:var(--ink-soft);font-size:.78rem;line-height:1.7}
+.sns-card .arrow{margin-left:auto;color:var(--gold);font-family:"Cormorant Garamond",serif;font-size:1.2rem}
 
 /* ---- 05 MAP・資料 ---- */
 .map{background:var(--surface)}
@@ -451,7 +470,10 @@ body::after{
           <span class="chip">国分寺市高木町2-18-32</span>
           <span class="chip">参加費 1,000円</span>
         </div>
-        <a class="btn btn-primary" href="mailto:bjtgogo23@gmail.com?subject=イベント参加申し込み">参加申し込み・お問い合わせ</a>
+        <div class="btns">
+          <a class="btn btn-primary" href="mailto:bjtgogo23@gmail.com?subject=イベント参加申し込み">参加申し込み・お問い合わせ</a>
+          <a class="btn btn-ghost" href="https://www.instagram.com/joumontanteidan/" target="_blank" rel="noopener">最新情報はInstagramへ</a>
+        </div>
       </div>
     </article>
     <div class="event-next">
@@ -524,18 +546,32 @@ body::after{
     <div class="sec-head">
       <span class="sec-label">調査区 04 ─ GALLERY</span>
       <h2>過去イベントギャラリー</h2>
-      <p class="sub">これまでの発掘(活動)の記録から。</p>
+      <p class="sub">活動の写真とミニ動画は、InstagramとFacebookに随時アップしています。</p>
     </div>
     <div class="gallery-grid">
       <div class="frame" data-ph="gallery-01.webp"><img src="images/gallery-01.webp" alt="活動写真1" width="600" height="600" onerror="this.hidden=true;this.closest('.frame').classList.add('noimg')"><div class="dogu-ph" aria-hidden="true"><small>gallery-01.webp (600×600)</small></div></div>
       <div class="frame" data-ph="gallery-02.webp"><img src="images/gallery-02.webp" alt="活動写真2" width="600" height="600" onerror="this.hidden=true;this.closest('.frame').classList.add('noimg')"><div class="dogu-ph" aria-hidden="true"><small>gallery-02.webp (600×600)</small></div></div>
       <div class="frame" data-ph="gallery-03.webp"><img src="images/gallery-03.webp" alt="活動写真3" width="600" height="600" onerror="this.hidden=true;this.closest('.frame').classList.add('noimg')"><div class="dogu-ph" aria-hidden="true"><small>gallery-03.webp (600×600)</small></div></div>
+
       <div class="frame" data-ph="gallery-04.webp"><img src="images/gallery-04.webp" alt="活動写真4" width="600" height="600" onerror="this.hidden=true;this.closest('.frame').classList.add('noimg')"><div class="dogu-ph" aria-hidden="true"><small>gallery-04.webp (600×600)</small></div></div>
       <div class="frame" data-ph="gallery-05.webp"><img src="images/gallery-05.webp" alt="活動写真5" width="600" height="600" onerror="this.hidden=true;this.closest('.frame').classList.add('noimg')"><div class="dogu-ph" aria-hidden="true"><small>gallery-05.webp (600×600)</small></div></div>
       <div class="frame" data-ph="gallery-06.webp"><img src="images/gallery-06.webp" alt="活動写真6" width="600" height="600" onerror="this.hidden=true;this.closest('.frame').classList.add('noimg')"><div class="dogu-ph" aria-hidden="true"><small>gallery-06.webp (600×600)</small></div></div>
     </div>
-    <div class="gallery-more">
-      <a class="btn btn-ghost" href="https://www.instagram.com/joumontanteidan/" target="_blank" rel="noopener">Instagramでもっと見る</a>
+    <div class="sns-cards">
+      <a class="sns-card" href="https://www.instagram.com/joumontanteidan/" target="_blank" rel="noopener">
+        <span class="sns-ico" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg>
+        </span>
+        <span><strong>Instagram</strong><small>@joumontanteidan ─ 活動写真・ミニ動画のアルバムはこちら</small></span>
+        <span class="arrow">&rarr;</span>
+      </a>
+      <a class="sns-card" href="https://www.facebook.com/p/%E3%81%B6%E3%82%93%E3%81%98%E3%81%AE%E7%B8%84%E6%96%87%E6%8E%A2%E5%81%B5%E5%9B%A3--100086311279747/" target="_blank" rel="noopener">
+        <span class="sns-ico" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.6l.4-3h-3V9.1c0-.9.3-1.5 1.6-1.5h1.5V4.9c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9V11H8v3h2.5v7h3z"/></svg>
+        </span>
+        <span><strong>Facebook</strong><small>これまでの活動記録・イベントレポートを読む</small></span>
+        <span class="arrow">&rarr;</span>
+      </a>
     </div>
   </div>
 </section>
