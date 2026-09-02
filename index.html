@@ -7,33 +7,41 @@
 <meta name="description" content="国分寺には、実は縄文の遺跡がいっぱい!縄文時代のことを楽しく知り、街を楽しみ探偵してゆく自由な集まり「ぶんじの縄文探偵団」の公式ページです。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700;900&family=Shippori+Mincho:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap">
 <style>
 :root{
-  --ink:#35281C;          /* 焦茶:本文 */
+  --ink:#3A2A1C;          /* 焦茶:本文 */
   --ink-soft:#6B5842;     /* 薄い焦茶:補足 */
-  --ground:#EFE7D8;       /* 生成り:地 */
-  --surface:#F7F2E7;      /* 表面:カード */
+  --ground:#F4ECDC;       /* 生成り:地 */
+  --sand:#E4D2AC;         /* 砂色:FVグラデ */
+  --surface:#F9F4E9;      /* 表面:カード */
   --line:#D9CCB4;         /* 罫線 */
-  --bengara:#A24A26;      /* 弁柄:アクセント */
-  --bengara-deep:#7E3418;
-  --ochre:#C08A3E;        /* 黄土:第二アクセント */
-  --moss:#5F6B45;         /* 苔:タグ */
+  --enji:#8C3A3F;         /* エンジ(蘇芳):CTA・日付だけ */
+  --enji-deep:#6F2C31;
+  --gold:#A8873C;         /* 金茶:高級感の要 */
+  --green:#3F5A44;        /* 深緑(松葉):メイン差し色 */
+  --pale:#DDE6D5;         /* ペールグリーン:面で淡く */
   --white:#FFFDF8;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  font-family:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  font-weight:500;
   color:var(--ink);
   background:var(--ground);
-  line-height:1.9;
+  line-height:2;
   font-size:15px;
   -webkit-font-smoothing:antialiased;
 }
 img{max-width:100%;display:block}
-a{color:var(--bengara);text-decoration:none}
-a:focus-visible,button:focus-visible{outline:3px solid var(--ochre);outline-offset:2px}
+a{color:var(--green);text-decoration:none}
+/* 数字・欧文はセリフ体(Cormorant Garamond) */
+.serif-num,.sec-label,.event-date .md,.event-date .dow,.event-date .time,
+.report-card time,.next-list .d,.goods-card .price{
+  font-family:"Cormorant Garamond","Zen Old Mincho",serif;
+}
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 
 /* ---- 縄目パターン(共通テクスチャ) ---- */
 .jomon-bg{
@@ -53,32 +61,32 @@ header{
 .brand svg{flex:none}
 nav.gnav{display:none;gap:22px;font-size:.85rem;font-weight:700}
 nav.gnav a{color:var(--ink)}
-nav.gnav a:hover{color:var(--bengara)}
+nav.gnav a:hover{color:var(--enji)}
 .cta-mini{
-  background:var(--bengara);color:var(--white);font-weight:700;font-size:.8rem;
+  background:var(--enji);color:var(--white);font-weight:700;font-size:.8rem;
   padding:8px 14px;border-radius:999px;white-space:nowrap;
 }
-.cta-mini:hover{background:var(--bengara-deep)}
+.cta-mini:hover{background:var(--enji-deep)}
 @media(min-width:840px){nav.gnav{display:flex}}
 
 /* ---- ヒーロー(FV) ---- */
-.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--surface) 0%,var(--ground) 100%)}
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#F9F3E6 0%,#EEDDB9 62%,var(--sand) 100%)}
 .hero-inner{
   max-width:1040px;margin:0 auto;padding:48px 20px 56px;
   display:grid;gap:28px;align-items:center;
 }
 @media(min-width:840px){.hero-inner{grid-template-columns:1.1fr .9fr;padding:72px 20px 88px}}
 .hero-copy .kicker{
-  display:inline-block;background:var(--ink);color:var(--ground);
-  font-size:.78rem;font-weight:700;letter-spacing:.14em;
-  padding:5px 14px;border-radius:3px;margin-bottom:18px;
+  display:inline-block;background:var(--green);color:#F1EBDC;
+  font-size:.78rem;font-weight:600;letter-spacing:.14em;
+  padding:5px 16px;border-radius:999px;margin-bottom:18px;
 }
 .hero h1{
   font-family:"Zen Old Mincho",serif;font-weight:900;
   font-size:clamp(2rem,7.5vw,3.4rem);line-height:1.35;letter-spacing:.04em;
   text-wrap:balance;
 }
-.hero h1 .accent{color:var(--bengara)}
+.hero h1 .accent{color:var(--enji)}
 .hero .lede{margin-top:18px;color:var(--ink-soft);max-width:34em}
 .hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
 .btn{
@@ -87,14 +95,15 @@ nav.gnav a:hover{color:var(--bengara)}
   transition:transform .15s ease, background .15s ease;
 }
 .btn:hover{transform:translateY(-2px)}
-.btn-primary{background:var(--bengara);color:var(--white)}
-.btn-primary:hover{background:var(--bengara-deep)}
-.btn-ghost{border:2px solid var(--ink);color:var(--ink)}
-.btn-ghost:hover{background:var(--ink);color:var(--ground)}
+.btn-primary{background:var(--enji);color:var(--white)}
+.btn-primary:hover{background:var(--enji-deep)}
+.btn-ghost{border:1px solid var(--green);color:var(--green)}
+.btn-ghost:hover{background:var(--green);color:#F1EBDC}
 .hero-visual{position:relative}
 .hero-frame{
   position:relative;border-radius:14px;overflow:hidden;
-  box-shadow:0 18px 40px rgba(53,40,28,.22);
+  box-shadow:0 18px 40px rgba(58,42,28,.22);
+  outline:1px solid var(--gold);outline-offset:6px;
   aspect-ratio:4/5;background:#241B12;
 }
 .hero-frame img{width:100%;height:100%;object-fit:cover}
@@ -117,10 +126,10 @@ section{padding:64px 0}
 .sec-head{margin-bottom:34px}
 .sec-label{
   display:inline-flex;align-items:center;gap:10px;
-  font-size:.72rem;font-weight:700;letter-spacing:.22em;color:var(--bengara);
+  font-size:.82rem;font-weight:600;letter-spacing:.22em;color:var(--green);
   margin-bottom:10px;
 }
-.sec-label::before{content:"";width:26px;height:2px;background:var(--bengara)}
+.sec-label::before{content:"";width:26px;height:1px;background:var(--gold)}
 .sec-head h2{
   font-family:"Zen Old Mincho",serif;font-weight:900;
   font-size:clamp(1.5rem,4.6vw,2.2rem);letter-spacing:.05em;line-height:1.4;text-wrap:balance;
@@ -140,7 +149,7 @@ section{padding:64px 0}
 .point{display:flex;gap:12px;align-items:flex-start}
 .point .mark{
   flex:none;width:34px;height:34px;border-radius:50%;
-  background:var(--ochre);color:var(--white);
+  background:var(--gold);color:var(--white);
   display:grid;place-items:center;font-weight:700;font-size:.8rem;
 }
 .point p{font-size:.92rem}
@@ -148,8 +157,8 @@ section{padding:64px 0}
 
 /* ---- 02 イベント告知 ---- */
 .notice-note,.wp-note{
-  font-size:.72rem;color:var(--moss);border:1px dashed var(--moss);
-  border-radius:6px;padding:6px 12px;display:inline-block;margin-bottom:20px;background:rgba(95,107,69,.06);
+  font-size:.72rem;color:var(--green);border:1px dashed var(--green);
+  border-radius:6px;padding:6px 12px;display:inline-block;margin-bottom:20px;background:var(--pale);
 }
 .event-card{
   background:var(--surface);border:1px solid var(--line);border-radius:12px;
@@ -158,7 +167,7 @@ section{padding:64px 0}
 }
 @media(min-width:720px){.event-card{grid-template-columns:220px 1fr}}
 .event-date{
-  background:var(--bengara);color:var(--white);
+  background:var(--enji);color:var(--white);
   display:flex;flex-direction:column;justify-content:center;align-items:center;
   padding:22px;gap:2px;
 }
@@ -169,7 +178,7 @@ section{padding:64px 0}
 .event-body h3{font-family:"Zen Old Mincho",serif;font-size:1.25rem;font-weight:700;line-height:1.5}
 .event-body .desc{font-size:.9rem;color:var(--ink-soft);margin-top:8px}
 .event-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.chip{font-size:.75rem;font-weight:700;background:var(--ground);border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+.chip{font-size:.75rem;font-weight:600;background:var(--pale);border:1px solid #C3D1BB;border-radius:999px;padding:4px 12px;color:#3E4A38}
 .event-body .btn{margin-top:18px;font-size:.85rem;padding:10px 22px}
 .event-next{margin-top:26px}
 .event-next h4{font-size:.85rem;letter-spacing:.15em;color:var(--ink-soft);margin-bottom:10px}
@@ -178,7 +187,7 @@ section{padding:64px 0}
   display:flex;gap:14px;align-items:baseline;font-size:.9rem;
   border-bottom:1px solid var(--line);padding-bottom:8px;
 }
-.next-list .d{font-weight:700;color:var(--bengara);white-space:nowrap;font-variant-numeric:tabular-nums}
+.next-list .d{font-weight:700;color:var(--enji);white-space:nowrap;font-variant-numeric:tabular-nums}
 
 /* ---- 03 イベント報告 ---- */
 .report{background:var(--surface)}
@@ -187,10 +196,10 @@ section{padding:64px 0}
 .report-card{background:var(--white);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
 .report-card .frame{aspect-ratio:4/3;border-radius:0}
 .report-card .body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
-.report-card time{font-size:.75rem;font-weight:700;color:var(--bengara);letter-spacing:.08em}
+.report-card time{font-size:.75rem;font-weight:700;color:var(--enji);letter-spacing:.08em}
 .report-card h3{font-size:1rem;font-weight:700;line-height:1.5}
 .report-card p{font-size:.85rem;color:var(--ink-soft);flex:1}
-.tag{align-self:flex-start;font-size:.7rem;font-weight:700;color:var(--moss);border:1px solid var(--moss);border-radius:999px;padding:2px 10px}
+.tag{align-self:flex-start;font-size:.7rem;font-weight:700;color:var(--green);border:1px solid var(--green);border-radius:999px;padding:2px 10px}
 
 /* ---- 04 ギャラリー ---- */
 .gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
@@ -210,9 +219,9 @@ section{padding:64px 0}
   padding:14px 18px;color:var(--ink);font-weight:500;font-size:.92rem;
   transition:border-color .15s ease, transform .15s ease;
 }
-.doc-list a:hover{border-color:var(--bengara);transform:translateY(-2px)}
+.doc-list a:hover{border-color:var(--enji);transform:translateY(-2px)}
 .doc-ico{
-  flex:none;width:40px;height:40px;border-radius:8px;background:var(--bengara);
+  flex:none;width:40px;height:40px;border-radius:8px;background:var(--green);
   color:var(--white);display:grid;place-items:center;font-size:.65rem;font-weight:700;letter-spacing:.05em;
 }
 .doc-list small{display:block;color:var(--ink-soft);font-size:.75rem;font-weight:400}
@@ -224,13 +233,13 @@ section{padding:64px 0}
 .goods-card .frame{aspect-ratio:1;border-radius:0}
 .goods-card .body{padding:12px 14px 16px}
 .goods-card h3{font-size:.9rem;font-weight:700}
-.goods-card .price{font-size:.8rem;color:var(--bengara);font-weight:700;margin-top:2px;font-variant-numeric:tabular-nums}
+.goods-card .price{font-size:.9rem;color:var(--gold);font-weight:700;margin-top:2px;font-variant-numeric:tabular-nums}
 .goods-cta{text-align:center;margin-top:30px}
 
 /* ---- 07 お問い合わせ ---- */
 .contact{background:var(--ink);color:var(--ground)}
-.contact .sec-label{color:var(--ochre)}
-.contact .sec-label::before{background:var(--ochre)}
+.contact .sec-label{color:var(--gold)}
+.contact .sec-label::before{background:var(--gold)}
 .contact .sec-head h2{color:var(--white)}
 .contact .sec-head .sub{color:#BBA987}
 .contact-grid{display:grid;gap:36px}
@@ -244,17 +253,17 @@ section{padding:64px 0}
   border:1px solid #6B5842;border-radius:999px;padding:8px 18px;
   color:var(--ground);font-size:.8rem;font-weight:700;
 }
-.sns a:hover{border-color:var(--ochre);color:var(--ochre)}
+.sns a:hover{border-color:var(--gold);color:var(--gold)}
 form{display:grid;gap:16px}
 .field label{display:block;font-size:.8rem;font-weight:700;letter-spacing:.08em;margin-bottom:6px;color:#D8CBB2}
-.field label .req{color:var(--ochre);margin-left:6px;font-size:.7rem}
+.field label .req{color:var(--gold);margin-left:6px;font-size:.7rem}
 .field input,.field textarea{
   width:100%;background:#241B12;border:1px solid #55452F;border-radius:8px;
   padding:12px 14px;color:var(--ground);font-size:.95rem;font-family:inherit;
 }
-.field input:focus,.field textarea:focus{outline:2px solid var(--ochre);border-color:var(--ochre)}
-form .btn{justify-self:start;border:none;cursor:pointer;font-family:inherit;background:var(--ochre);color:#241B12}
-form .btn:hover{background:#D89C4A}
+.field input:focus,.field textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+form .btn{justify-self:start;border:none;cursor:pointer;font-family:inherit;background:var(--enji);color:var(--white)}
+form .btn:hover{background:#A34A50}
 
 /* ---- フッター ---- */
 footer{background:#241B12;color:#8A7757;padding:28px 0;text-align:center;font-size:.75rem;letter-spacing:.08em}
@@ -276,7 +285,7 @@ section[id]{scroll-margin-top:64px}
     <a class="brand" href="#top" aria-label="ぶんじの縄文探偵団 トップへ">
       <!-- 恋ヶ窪の土偶モチーフ -->
       <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">
-        <path d="M15 3 C17 6 24 9 27 12 C24 14 20 15 19 18 C18 22 16 26 15 27 C14 26 12 22 11 18 C10 15 6 14 3 12 C6 9 13 6 15 3 Z" fill="#C08A3E"/>
+        <path d="M15 3 C17 6 24 9 27 12 C24 14 20 15 19 18 C18 22 16 26 15 27 C14 26 12 22 11 18 C10 15 6 14 3 12 C6 9 13 6 15 3 Z" fill="#A8873C"/>
         <circle cx="13" cy="10.5" r="1" fill="#35281C"/>
         <circle cx="17" cy="10.5" r="1" fill="#35281C"/>
       </svg>
