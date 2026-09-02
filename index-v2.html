@@ -16,12 +16,11 @@
   --sand:#E4D2AC;         /* 砂色:FVグラデ */
   --surface:#F9F4E9;      /* 表面:カード */
   --line:#D9CCB4;         /* 罫線 */
-  /* V3: エンジとグリーンの役割を反転(深緑=CTA・日付 / エンジ=ラベル・タグ) */
-  --enji:#3F5A44;         /* ←CTA・日付(深緑) */
-  --enji-deep:#2F4433;
+  --enji:#8C3A3F;         /* エンジ(蘇芳):CTA・日付だけ */
+  --enji-deep:#6F2C31;
   --gold:#A8873C;         /* 金茶:高級感の要 */
-  --green:#8C3A3F;        /* ←ラベル・タグ(エンジ) */
-  --pale:#EBDAD6;         /* ペールロゼ:面で淡く */
+  --green:#3F5A44;        /* 深緑(松葉):メイン差し色 */
+  --pale:#DDE6D5;         /* ペールグリーン:面で淡く */
   --honey:#ECA53E;        /* ハチミツ色:小さなバッジ・リボンだけ */
   --honey-deep:#D98F27;
   --white:#FFFDF8;
@@ -227,7 +226,7 @@ section{padding:64px 0}
 .event-body h3{font-family:"Zen Old Mincho",serif;font-size:1.25rem;font-weight:700;line-height:1.5}
 .event-body .desc{font-size:.9rem;color:var(--ink-soft);margin-top:8px}
 .event-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.chip{font-size:.75rem;font-weight:600;background:var(--pale);border:1px solid #D6BDB8;border-radius:999px;padding:4px 12px;color:#4A3535}
+.chip{font-size:.75rem;font-weight:600;background:var(--pale);border:1px solid #C3D1BB;border-radius:999px;padding:4px 12px;color:#3E4A38}
 .event-body .btn{margin-top:18px;font-size:.85rem;padding:10px 22px}
 .event-next{margin-top:26px}
 .event-next h4{font-size:.85rem;letter-spacing:.15em;color:var(--ink-soft);margin-bottom:10px}
@@ -312,7 +311,7 @@ form{display:grid;gap:16px}
 }
 .field input:focus,.field textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
 form .btn{justify-self:start;border:none;cursor:pointer;font-family:inherit;background:var(--enji);color:var(--white)}
-form .btn:hover{background:#4E6B52}
+form .btn:hover{background:#A34A50}
 
 /* ---- フッター ---- */
 footer{background:#241B12;color:#8A7757;padding:28px 0;text-align:center;font-size:.75rem;letter-spacing:.08em}
