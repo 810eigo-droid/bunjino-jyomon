@@ -276,23 +276,27 @@ section{padding:64px 0}
 .sns-card .arrow{margin-left:auto;color:var(--gold);font-family:"Cormorant Garamond",serif;font-size:1.2rem}
 
 /* ---- 05 MAP・資料 ---- */
-.map{background:var(--surface)}
+.map{background:var(--ink);color:var(--ground)}
+.map .sec-label{color:var(--gold)}
+.map .sec-label::before{background:var(--gold)}
+.map .sec-head h2{color:var(--white)}
+.map .sec-head .sub{color:#BBA987}
 .map-grid{display:grid;gap:32px;align-items:start}
 @media(min-width:840px){.map-grid{grid-template-columns:1.1fr .9fr;gap:48px}}
 .map-grid .frame{aspect-ratio:4/3}
 .doc-list{list-style:none;display:grid;gap:12px;margin-top:4px}
 .doc-list a{
   display:flex;align-items:center;gap:14px;
-  background:var(--white);border:1px solid var(--line);border-radius:10px;
-  padding:14px 18px;color:var(--ink);font-weight:500;font-size:.92rem;
+  background:#4A3826;border:1px solid #5F4C36;border-radius:10px;
+  padding:14px 18px;color:var(--ground);font-weight:500;font-size:.92rem;
   transition:border-color .15s ease, transform .15s ease;
 }
-.doc-list a:hover{border-color:var(--enji);transform:translateY(-2px)}
+.doc-list a:hover{border-color:var(--gold);transform:translateY(-2px)}
 .doc-ico{
   flex:none;width:40px;height:40px;border-radius:8px;background:var(--green);
   color:var(--white);display:grid;place-items:center;font-size:.65rem;font-weight:700;letter-spacing:.05em;
 }
-.doc-list small{display:block;color:var(--ink-soft);font-size:.75rem;font-weight:400}
+.doc-list small{display:block;color:#BBA987;font-size:.75rem;font-weight:400}
 
 /* ---- 06 グッズ ---- */
 .goods-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
