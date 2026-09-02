@@ -21,6 +21,8 @@
   --gold:#A8873C;         /* 金茶:高級感の要 */
   --green:#3F5A44;        /* 深緑(松葉):メイン差し色 */
   --pale:#DDE6D5;         /* ペールグリーン:面で淡く */
+  --honey:#ECA53E;        /* ハチミツ色:小さなバッジ・リボンだけ */
+  --honey-deep:#D98F27;
   --white:#FFFDF8;
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -100,17 +102,36 @@ nav.gnav a:hover{color:var(--enji)}
 .btn-ghost{border:1px solid var(--green);color:var(--green)}
 .btn-ghost:hover{background:var(--green);color:#F1EBDC}
 .hero-visual{position:relative}
-.hero-frame{
-  position:relative;border-radius:14px;overflow:hidden;
-  box-shadow:0 18px 40px rgba(58,42,28,.22);
-  outline:1px solid var(--gold);outline-offset:6px;
-  aspect-ratio:4/5;background:#241B12;
+/* 透過画像の土偶を背景に溶け込ませて浮かせる */
+.hero-dogu{position:relative;display:flex;flex-direction:column;align-items:center;gap:14px;padding-top:26px}
+.hero-dogu::before{
+  content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:min(92%,470px);aspect-ratio:1;border-radius:50%;z-index:0;
+  background:radial-gradient(circle,rgba(255,250,238,.95) 0%,rgba(255,250,238,0) 68%);
 }
-.hero-frame img{width:100%;height:100%;object-fit:cover}
+.hero-dogu::after{
+  content:"";position:absolute;top:14px;left:50%;transform:translateX(-50%);
+  width:min(78%,400px);aspect-ratio:1;border-radius:50%;z-index:0;
+  border:1px solid rgba(168,135,60,.45);
+}
+.hero-dogu img{
+  position:relative;z-index:1;width:min(100%,540px);height:auto;
+  filter:drop-shadow(0 26px 30px rgba(58,42,28,.32));
+}
 .hero-caption{
-  position:absolute;left:14px;bottom:12px;color:#EFE7D8;font-size:.72rem;letter-spacing:.08em;
-  background:rgba(36,27,18,.55);padding:4px 10px;border-radius:3px;
+  position:relative;z-index:1;color:var(--ink-soft);font-size:.75rem;letter-spacing:.14em;
 }
+.hero-caption::before,.hero-caption::after{content:"─";color:var(--gold);margin:0 10px}
+/* ハチミツ色のバッジ(参考LPの黄色) */
+.fv-badges{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;z-index:2;pointer-events:none}
+.fv-badge{
+  display:inline-block;background:linear-gradient(180deg,#F2B04A,var(--honey-deep));
+  color:var(--white);font-size:.78rem;font-weight:600;letter-spacing:.08em;
+  padding:8px 16px;border-radius:999px;transform:rotate(-4deg);
+  box-shadow:0 4px 10px rgba(217,143,39,.35);
+}
+.fv-badge.alt{transform:rotate(3deg)}
+@media(max-width:839px){.hero-dogu{padding-top:40px}}
 /* 土偶シルエット(画像未設定時のプレースホルダー兼モチーフ) */
 .dogu-ph{
   position:absolute;inset:0;display:none;align-items:center;justify-content:center;flex-direction:column;gap:14px;
@@ -148,9 +169,10 @@ section{padding:64px 0}
 .about-points{display:grid;gap:14px;margin-top:22px}
 .point{display:flex;gap:12px;align-items:flex-start}
 .point .mark{
-  flex:none;width:34px;height:34px;border-radius:50%;
-  background:var(--gold);color:var(--white);
-  display:grid;place-items:center;font-weight:700;font-size:.8rem;
+  flex:none;width:38px;height:38px;border-radius:50%;
+  background:linear-gradient(180deg,#F2B04A,var(--honey-deep));color:var(--white);
+  display:grid;place-items:center;font-weight:600;font-size:.78rem;
+  box-shadow:0 3px 8px rgba(217,143,39,.3);
 }
 .point p{font-size:.92rem}
 .point strong{display:block;font-size:.98rem}
@@ -175,6 +197,11 @@ section{padding:64px 0}
 .event-date .dow{font-size:.85rem;letter-spacing:.2em}
 .event-date .time{font-size:.8rem;margin-top:6px;opacity:.9}
 .event-body{padding:24px 24px 26px}
+.honey-tag{
+  display:inline-block;background:linear-gradient(180deg,#F2B04A,var(--honey-deep));
+  color:var(--white);font-size:.7rem;font-weight:600;letter-spacing:.1em;
+  padding:3px 14px;border-radius:999px;margin-bottom:10px;
+}
 .event-body h3{font-family:"Zen Old Mincho",serif;font-size:1.25rem;font-weight:700;line-height:1.5}
 .event-body .desc{font-size:.9rem;color:var(--ink-soft);margin-top:8px}
 .event-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
@@ -315,18 +342,13 @@ section[id]{scroll-margin-top:64px}
       </div>
     </div>
     <div class="hero-visual">
-      <div class="hero-frame" data-ph="fv-dogu.webp">
-        <img src="images/fv-dogu.webp" alt="恋ヶ窪で出土した土偶" width="800" height="1000"
-             onerror="this.hidden=true;this.closest('.hero-frame').classList.add('noimg')">
-        <div class="dogu-ph" aria-hidden="true">
-          <svg width="140" height="140" viewBox="0 0 30 30">
-            <path d="M15 3 C17 6 24 9 27 12 C24 14 20 15 19 18 C18 22 16 26 15 27 C14 26 12 22 11 18 C10 15 6 14 3 12 C6 9 13 6 15 3 Z" fill="#C7B694"/>
-            <circle cx="13" cy="10.5" r="1" fill="#241B12"/>
-            <circle cx="17" cy="10.5" r="1" fill="#241B12"/>
-          </svg>
-          <small>images/fv-dogu.webp (800×1000)</small>
-        </div>
-        <span class="hero-caption">恋ヶ窪出土の土偶 ─ 国分寺市</span>
+      <div class="fv-badges" aria-hidden="true">
+        <span class="fv-badge">初心者さん大歓迎</span>
+        <span class="fv-badge alt">親子参加OK</span>
+      </div>
+      <div class="hero-dogu">
+        <img src="images/fv-dogu.webp" alt="恋ヶ窪で出土した土偶" width="1536" height="1024">
+        <span class="hero-caption">恋ヶ窪出土の土偶・国分寺市</span>
       </div>
     </div>
   </div>
@@ -374,6 +396,7 @@ section[id]{scroll-margin-top:64px}
         <span class="time">14:00 – 17:00</span>
       </div>
       <div class="event-body">
+        <span class="honey-tag">参加者募集中</span>
         <h3>ぶんじの縄文まち歩き 予習大会</h3>
         <p class="desc">見どころ・痕跡・地形から読み解く、徹底探偵!!! 秋のまち歩きに向けて、みんなで予習します。</p>
         <div class="event-meta">
