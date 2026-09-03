@@ -132,7 +132,9 @@ header{
 ========================================================= */
 .fv{
   position:relative;overflow:hidden;padding:48px 0 44px;
+  /* images/fv-bg-b.webp を置くと自動で背景に適用。無い間は下のグラデで表示 */
   background:
+    url('images/fv-bg-b.webp') center top/cover no-repeat,
     linear-gradient(160deg, rgba(240,120,24,.16) 0%, transparent 45%),
     linear-gradient(180deg,#2A2016 0%,var(--dark) 100%);
   color:#fff;
@@ -451,6 +453,12 @@ footer .fbrand{font-family:var(--head);font-weight:900;font-size:17px;margin-bot
 ========================================================= */
 @media (min-width:840px){
   body{font-size:17.5px}
+  .fv{ /* PC用背景(images/fv-bg-b-pc.webp)。無い間はグラデで表示 */
+    background:
+      url('images/fv-bg-b-pc.webp') center/cover no-repeat,
+      linear-gradient(160deg, rgba(240,120,24,.16) 0%, transparent 45%),
+      linear-gradient(180deg,#2A2016 0%,var(--dark) 100%);
+  }
   .fv-catch{font-size:48px}
   .sec-title{font-size:30px}
   .reason-grid{grid-template-columns:1fr 1fr 1fr}
