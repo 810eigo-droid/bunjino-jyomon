@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ヘルスライフジム(仮称)群馬3号店 新規オープンLP デザイン案</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
+<style>
+/* =========================================================
+   ヘルスライフジム(仮称)新店LP デザイン案
+   配色: だいだい #F0761B / 山吹 #FFC42E / 深柿 #C74A05
+         クリーム #FFF6E8 / 焦茶 #40301F / 緑 #2F7D5B
+   書体: 見出し Zen Maru Gothic / 本文 Noto Sans JP
+   スマホ優先・高齢者にも読みやすい大きめ文字
+========================================================= */
+:root{
+  --orange:#F0761B;
+  --orange-soft:#FDE3C8;
+  --deep:#C74A05;
+  --yellow:#FFC42E;
+  --yellow-pale:#FFF1C9;
+  --cream:#FFF6E8;
+  --white:#FFFFFF;
+  --ink:#40301F;
+  --ink-soft:#7A6852;
+  --green:#2F7D5B;
+  --green-pale:#E2F0E7;
+  --head:'Zen Maru Gothic','Noto Sans JP',sans-serif;
+  --body:'Noto Sans JP',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body);
+  font-size:17px;
+  line-height:1.9;
+  color:var(--ink);
+  background:var(--cream);
+  -webkit-font-smoothing:antialiased;
+  padding-bottom:84px; /* 下部固定CTAぶん */
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+/* ---- 共通レイアウト ---- */
+.wrap{max-width:680px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+.sec-head{text-align:center;margin-bottom:32px}
+.eyebrow{
+  display:inline-block;font-family:var(--head);font-weight:700;font-size:14px;
+  letter-spacing:.18em;color:var(--deep);background:var(--yellow-pale);
+  border-radius:999px;padding:4px 18px;margin-bottom:12px;
+}
+.sec-title{
+  font-family:var(--head);font-weight:900;font-size:27px;line-height:1.45;
+  text-wrap:balance;
+}
+.sec-title .accent{color:var(--orange)}
+.note{font-size:13px;color:var(--ink-soft);margin-top:10px}
+
+/* ---- しましまディバイダー(オレンジ×山吹のテント地) ---- */
+.stripe{
+  height:14px;
+  background:repeating-linear-gradient(-45deg,
+    var(--orange) 0 14px, var(--yellow) 14px 28px);
+}
+
+/* ---- 画像プレースホルダー(images/にファイルを置くと自動で差し替わる) ---- */
+.ph{
+  position:relative;background:var(--orange-soft);border:2px dashed var(--orange);
+  border-radius:14px;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+.ph::before{
+  content:"📷 " attr(data-label);
+  position:absolute;inset:auto auto 50% 50%;transform:translate(-50%,50%);
+  font-size:13px;color:var(--deep);text-align:center;width:90%;line-height:1.6;
+  white-space:pre-line;
+}
+.ph img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover}
+
+/* ---- ボタン ---- */
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  font-family:var(--head);font-weight:900;text-decoration:none;
+  border-radius:999px;min-height:60px;padding:10px 24px;
+  font-size:19px;line-height:1.4;text-align:center;
+  box-shadow:0 4px 0 rgba(64,48,31,.22);
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 rgba(64,48,31,.22)}
+.btn-primary{background:var(--deep);color:#fff}
+.btn-primary small{font-weight:700;font-size:12px;display:block}
+.btn-tel{background:var(--green);color:#fff}
+.btn-tel .num{font-size:23px;letter-spacing:.03em}
+
+/* =========================================================
+   ヘッダー
+========================================================= */
+header{
+  position:sticky;top:0;z-index:100;background:var(--white);
+  box-shadow:0 1px 8px rgba(64,48,31,.12);
+}
+.header-inner{
+  max-width:960px;margin:0 auto;padding:10px 16px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand .logo-ph{
+  width:44px;height:44px;border-radius:10px;background:var(--orange);
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-family:var(--head);font-weight:900;font-size:11px;text-align:center;line-height:1.2;
+}
+.brand .name{font-family:var(--head);font-weight:900;font-size:16px;line-height:1.3}
+.brand .name small{display:block;font-size:11px;font-weight:700;color:var(--deep)}
+.header-tel{
+  font-family:var(--head);font-weight:900;font-size:14px;color:#fff;
+  background:var(--green);border-radius:999px;padding:8px 16px;text-decoration:none;
+  white-space:nowrap;
+}
+
+/* =========================================================
+   FV(ファーストビュー)
+========================================================= */
+.fv{
+  position:relative;overflow:hidden;padding:44px 0 40px;
+  background:
+    radial-gradient(circle at 50% -20%, var(--yellow-pale) 0 46%, transparent 46.5%),
+    linear-gradient(180deg,#FFEBD1 0%,var(--cream) 100%);
+}
+.fv::before{ /* 朝日のうすい放射(元気・健康のモチーフ) */
+  content:"";position:absolute;inset:-40% -40% auto;height:120%;
+  background:repeating-conic-gradient(from -90deg at 50% 0,
+    rgba(240,118,27,.07) 0 6deg, transparent 6deg 12deg);
+  pointer-events:none;
+}
+.fv .wrap{position:relative}
+.fv-open{
+  display:flex;align-items:center;justify-content:center;gap:12px;
+  font-family:var(--head);font-weight:900;color:var(--deep);
+  font-size:15px;letter-spacing:.14em;margin-bottom:14px;
+}
+.fv-open::before,.fv-open::after{content:"";height:2px;width:34px;background:var(--deep);border-radius:2px}
+.fv-open::before{transform:rotate(24deg)}
+.fv-open::after{transform:rotate(-24deg)}
+.fv-catch{
+  font-family:var(--head);font-weight:900;text-align:center;
+  font-size:37px;line-height:1.4;letter-spacing:.02em;text-wrap:balance;
+}
+.fv-catch .big{color:var(--orange)}
+.fv-sub{
+  text-align:center;font-weight:700;font-size:16px;margin-top:14px;line-height:1.8;
+}
+.fv-visual{margin-top:22px;height:230px}
+.fv-badges{
+  display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:18px;
+}
+.fv-badges span{
+  font-family:var(--head);font-weight:700;font-size:13.5px;
+  background:var(--white);border:2px solid var(--orange);color:var(--deep);
+  border-radius:999px;padding:5px 14px;
+}
+/* キャンペーンバースト */
+.burst{
+  margin:26px auto 0;max-width:420px;background:var(--white);
+  border:3px solid var(--orange);border-radius:18px;text-align:center;
+  padding:20px 16px 22px;position:relative;
+  box-shadow:0 6px 0 rgba(199,74,5,.18);
+}
+.burst .ribbon{
+  position:absolute;top:-16px;left:50%;transform:translateX(-50%);
+  background:var(--deep);color:#fff;font-family:var(--head);font-weight:900;
+  font-size:14px;letter-spacing:.1em;border-radius:999px;padding:5px 20px;white-space:nowrap;
+}
+.burst .limit{
+  font-family:var(--head);font-weight:900;font-size:16px;color:var(--deep);margin-top:6px;
+}
+.burst .limit b{font-size:22px}
+.price-line{
+  display:flex;align-items:baseline;justify-content:center;gap:10px;margin-top:6px;
+  font-family:var(--head);font-weight:900;
+}
+.price-line .was{
+  font-size:19px;color:var(--ink-soft);text-decoration:line-through;
+  text-decoration-color:var(--deep);text-decoration-thickness:2.5px;
+}
+.price-line .arrow{color:var(--orange);font-size:20px}
+.price-line .now{font-size:42px;color:var(--deep);line-height:1}
+.price-line .now small{font-size:16px}
+.burst .forever{
+  display:inline-block;margin-top:10px;background:var(--yellow);
+  font-family:var(--head);font-weight:900;font-size:15px;
+  border-radius:999px;padding:4px 16px;
+}
+.burst .once{font-size:13px;font-weight:700;color:var(--deep);margin-top:10px}
+.fv-cta{margin-top:22px;display:grid;gap:12px}
+
+/* =========================================================
+   お悩みチェック
+========================================================= */
+.worries{background:var(--white)}
+.worry-list{display:grid;gap:12px;margin-top:4px}
+.worry-list li{
+  list-style:none;display:flex;gap:12px;align-items:flex-start;
+  background:var(--cream);border-radius:12px;padding:14px 16px;
+  font-weight:500;font-size:16.5px;line-height:1.7;
+}
+.worry-list .check{
+  flex:none;width:28px;height:28px;border-radius:8px;background:var(--orange);
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  font-weight:900;font-size:16px;margin-top:3px;
+}
+.worry-close{
+  margin-top:26px;text-align:center;font-family:var(--head);
+  font-weight:900;font-size:22px;line-height:1.6;
+}
+.worry-close .marker{
+  background:linear-gradient(transparent 62%, var(--yellow) 62%);
+}
+
+/* =========================================================
+   選ばれる理由(図解カード)
+========================================================= */
+.reasons{background:var(--cream)}
+.reason-grid{display:grid;gap:18px}
+.reason{
+  background:var(--white);border-radius:16px;padding:22px 20px;
+  border-top:6px solid var(--orange);
+  box-shadow:0 3px 12px rgba(64,48,31,.08);
+}
+.reason-head{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+.reason-no{
+  flex:none;width:52px;height:52px;border-radius:50%;
+  background:var(--yellow);color:var(--ink);
+  font-family:var(--head);font-weight:900;font-size:13px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;
+}
+.reason-no b{font-size:22px;margin-top:2px}
+.reason h3{font-family:var(--head);font-weight:900;font-size:20px;line-height:1.5}
+.reason p{font-size:15.5px}
+.reason .ph{height:150px;margin-top:14px}
+
+/* =========================================================
+   料金(図解)
+========================================================= */
+.pricing{background:var(--orange)}
+.pricing .eyebrow{background:#fff;color:var(--deep)}
+.pricing .sec-title{color:#fff}
+.price-card{
+  background:var(--white);border-radius:20px;padding:26px 20px 28px;text-align:center;
+  box-shadow:0 8px 0 rgba(122,45,0,.28);
+}
+.price-card .plan-name{
+  font-family:var(--head);font-weight:900;font-size:19px;
+  border-bottom:3px dotted var(--orange);display:inline-block;padding-bottom:4px;
+}
+.price-compare{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:6px;margin-top:20px}
+.price-box{border-radius:14px;padding:14px 8px 16px;font-family:var(--head);font-weight:900}
+.price-box .label{font-size:13px;display:block;margin-bottom:4px}
+.price-box .yen{font-size:15px}
+.price-box.before{background:var(--cream);color:var(--ink-soft)}
+.price-box.before .amount{font-size:26px;text-decoration:line-through;text-decoration-color:var(--deep);text-decoration-thickness:3px}
+.price-box.after{background:var(--yellow-pale);border:3px solid var(--deep);color:var(--deep)}
+.price-box.after .amount{font-size:34px;line-height:1.1}
+.price-arrow{font-family:var(--head);font-weight:900;color:var(--orange);font-size:26px}
+.price-forever{
+  margin-top:16px;background:var(--green-pale);border-radius:12px;padding:12px 14px;
+  font-weight:700;font-size:15px;color:var(--green);line-height:1.7;
+}
+.price-deadline{
+  margin-top:16px;font-family:var(--head);font-weight:900;font-size:17px;color:var(--deep);
+}
+.price-deadline b{font-size:24px}
+.price-note{font-size:12.5px;color:var(--ink-soft);margin-top:10px;text-align:left}
+
+/* =========================================================
+   ご入会までの流れ(3ステップ図解)
+========================================================= */
+.flow{background:var(--white)}
+.steps{display:grid;gap:0}
+.step{
+  display:flex;gap:16px;align-items:flex-start;position:relative;padding-bottom:28px;
+}
+.step:not(:last-child)::before{
+  content:"";position:absolute;left:25px;top:56px;bottom:4px;width:4px;
+  background:repeating-linear-gradient(var(--orange-soft) 0 8px, transparent 8px 16px);
+  border-radius:2px;
+}
+.step-no{
+  flex:none;width:52px;height:52px;border-radius:50%;background:var(--orange);color:#fff;
+  font-family:var(--head);font-weight:900;font-size:11px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;
+  position:relative;z-index:1;
+}
+.step-no b{font-size:20px;margin-top:2px}
+.step h3{font-family:var(--head);font-weight:900;font-size:19px;margin-bottom:4px}
+.step p{font-size:15.5px}
+.step .chip{
+  display:inline-block;background:var(--green-pale);color:var(--green);
+  font-weight:700;font-size:13px;border-radius:999px;padding:2px 12px;margin-top:6px;
+}
+
+/* =========================================================
+   店舗情報・アクセス
+========================================================= */
+.stores{background:var(--cream)}
+.store-card{
+  background:var(--white);border-radius:16px;overflow:hidden;
+  box-shadow:0 3px 12px rgba(64,48,31,.08);margin-bottom:20px;
+}
+.store-card.new{border:3px solid var(--orange)}
+.store-tag{
+  display:inline-block;background:var(--deep);color:#fff;
+  font-family:var(--head);font-weight:900;font-size:13px;
+  border-radius:0 0 12px 0;padding:4px 16px;
+}
+.store-card .ph{height:170px;border-radius:0;border:none;border-bottom:2px dashed var(--orange)}
+.store-body{padding:20px}
+.store-body h3{font-family:var(--head);font-weight:900;font-size:21px;margin-bottom:10px}
+.store-body h3 small{font-size:13px;color:var(--deep);display:block;font-weight:700}
+.store-table{width:100%;border-collapse:collapse;font-size:15px}
+.store-table th{
+  text-align:left;white-space:nowrap;color:var(--deep);font-weight:700;
+  padding:8px 14px 8px 0;vertical-align:top;width:6em;
+}
+.store-table td{padding:8px 0;border-bottom:1px dashed var(--orange-soft)}
+.store-table tr:last-child td{border-bottom:none}
+.sisters{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.sister{
+  background:var(--white);border-radius:14px;padding:16px;text-align:center;
+  border:2px solid var(--orange-soft);
+}
+.sister h4{font-family:var(--head);font-weight:900;font-size:16px}
+.sister p{font-size:13px;color:var(--ink-soft);margin-top:4px}
+.sister .badge{
+  display:inline-block;background:var(--yellow-pale);color:var(--deep);
+  font-weight:700;font-size:12px;border-radius:999px;padding:2px 10px;margin-top:8px;
+}
+.map-frame{
+  border-radius:16px;overflow:hidden;border:3px solid var(--white);
+  box-shadow:0 3px 12px rgba(64,48,31,.12);margin-top:20px;
+}
+.map-frame iframe{display:block;width:100%;height:300px;border:0}
+
+/* =========================================================
+   よくあるご質問
+========================================================= */
+.faq{background:var(--white)}
+.qa{border-bottom:2px dashed var(--orange-soft);padding:18px 0}
+.qa:last-child{border-bottom:none}
+.qa dt{
+  display:flex;gap:12px;font-family:var(--head);font-weight:900;font-size:17px;line-height:1.6;
+}
+.qa dd{display:flex;gap:12px;margin-top:10px;font-size:15.5px}
+.qa .mark{
+  flex:none;width:30px;height:30px;border-radius:50%;color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--head);font-weight:900;font-size:15px;margin-top:3px;
+}
+.qa dt .mark{background:var(--orange)}
+.qa dd .mark{background:var(--green)}
+
+/* =========================================================
+   お問い合わせ・CTA
+========================================================= */
+.contact{background:linear-gradient(180deg,var(--yellow-pale),var(--cream))}
+.contact-card{
+  background:var(--white);border-radius:20px;padding:28px 22px;text-align:center;
+  box-shadow:0 4px 16px rgba(64,48,31,.1);
+}
+.contact-card .lead{font-family:var(--head);font-weight:900;font-size:21px;line-height:1.6}
+.contact-card .lead .accent{color:var(--deep)}
+.contact-cta{display:grid;gap:14px;margin-top:20px}
+.contact-hours{font-size:13.5px;color:var(--ink-soft);margin-top:14px}
+
+/* =========================================================
+   フッター・下部固定CTA
+========================================================= */
+footer{
+  background:var(--ink);color:var(--cream);text-align:center;
+  padding:32px 20px 40px;font-size:13px;
+}
+footer .fbrand{font-family:var(--head);font-weight:900;font-size:17px;margin-bottom:6px}
+.fixed-cta{
+  position:fixed;left:0;right:0;bottom:0;z-index:200;
+  background:rgba(255,255,255,.96);box-shadow:0 -3px 14px rgba(64,48,31,.18);
+  padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+}
+.fixed-cta-inner{max-width:680px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fixed-cta .btn{min-height:52px;font-size:15px;box-shadow:none;border-radius:12px}
+.fixed-cta .btn small{font-size:10.5px;font-weight:700;display:block}
+
+/* =========================================================
+   PC(840px〜):中央寄せLPスタイル
+========================================================= */
+@media (min-width:840px){
+  body{font-size:17.5px}
+  .fv-catch{font-size:46px}
+  .sec-title{font-size:31px}
+  .reason-grid{grid-template-columns:1fr 1fr}
+  .fv-visual{height:300px}
+  .fv-cta{grid-template-columns:1fr 1fr;max-width:640px;margin-left:auto;margin-right:auto}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn{transition:none}
+}
+
+/* ---- WATERMARK(デザイン提案用サンプル表示。納品時にこのブロックを削除) ---- */
+body::after{
+  content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;
+  background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="380" height="280"><text x="20" y="160" transform="rotate(-28 190 140)" font-family="Georgia,serif" font-size="28" letter-spacing="2" fill="%23C74A05" fill-opacity="0.09">Sample TAFDesign</text></svg>') repeat;
+}
+</style>
+</head>
+<body id="top">
+
+<header>
+  <div class="header-inner">
+    <a class="brand" href="#top" aria-label="ヘルスライフジム トップへ">
+      <span class="logo-ph">LOGO<br>支給</span>
+      <span class="name">ヘルスライフジム<small>※店名仮・ロゴは支給データに差し替え</small></span>
+    </a>
+    <a class="header-tel" href="tel:0000000000">📞 お電話</a>
+  </div>
+</header>
+
+<!-- =====================================================
+     FV
+====================================================== -->
+<div class="fv">
+  <div class="wrap">
+    <p class="fv-open">群馬で愛されて3店舗目 ─ 〇〇店 9月NEW OPEN!</p>
+    <h1 class="fv-catch">何歳からでも、<br><span class="big">体は変わる。</span></h1>
+    <p class="fv-sub">30代から70代まで、みんなのための健康ジム。<br>運動が苦手でも、はじめてでも大丈夫。</p>
+
+    <div class="ph fv-visual" data-label="メイン写真が入ります
+(店内・トレーニング風景など/支給写真)">
+      <img src="images/fv-main.webp" alt="" onerror="this.remove()">
+    </div>
+
+    <div class="fv-badges">
+      <span>🏋️ マシン使い放題</span>
+      <span>🧑‍🏫 スタッフが丁寧サポート</span>
+      <span>🚗 駐車場完備(仮)</span>
+    </div>
+
+    <div class="burst">
+      <p class="ribbon">オープン記念キャンペーン</p>
+      <p class="limit">9月20日<b>(日)</b>までのご入会限定</p>
+      <p class="price-line">
+        <span class="was">月額16,900円</span>
+        <span class="arrow">▶</span>
+        <span class="now">14,900<small>円(税込)</small></span>
+      </p>
+      <p><span class="forever">この価格がずっと続く「永年割引」</span></p>
+      <p class="once">※オープン記念の今回限り。次回の開催予定はありません。</p>
+    </div>
+
+    <div class="fv-cta">
+      <a class="btn btn-primary" href="#contact">無料見学・入会のご予約<small>24時間受付・かんたん1分</small></a>
+      <a class="btn btn-tel" href="tel:0000000000">📞 <span class="num">000-000-0000</span></a>
+    </div>
+  </div>
+</div>
+
+<div class="stripe" aria-hidden="true"></div>
+
+<!-- =====================================================
+     お悩みチェック
+====================================================== -->
+<section class="worries">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">CHECK</span>
+      <h2 class="sec-title">こんなお悩み、<br>ありませんか?</h2>
+    </div>
+    <ul class="worry-list">
+      <li><span class="check">✓</span>最近、階段や坂道で息が切れるようになった</li>
+      <li><span class="check">✓</span>健康診断の数値が気になってきた</li>
+      <li><span class="check">✓</span>運動したいけど、何から始めればいいか分からない</li>
+      <li><span class="check">✓</span>ジムは若い人ばかりで気後れしそう…</li>
+      <li><span class="check">✓</span>ひとりだと、どうせ続かない気がする</li>
+    </ul>
+    <p class="worry-close">そのお悩み、ぜんぶ<br><span class="marker">当ジムにおまかせください!</span></p>
+  </div>
+</section>
+
+<div class="stripe" aria-hidden="true"></div>
+
+<!-- =====================================================
+     選ばれる理由
+====================================================== -->
+<section class="reasons" id="reasons">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">REASON</span>
+      <h2 class="sec-title">ヘルスライフジムが<br><span class="accent">選ばれる4つの理由</span></h2>
+      <p class="note">※内容は仮です。実際の設備・サービスに合わせて差し替えます。</p>
+    </div>
+    <div class="reason-grid">
+      <div class="reason">
+        <div class="reason-head">
+          <span class="reason-no">理由<b>1</b></span>
+          <h3>はじめてでも安心の<br>かんたんマシン</h3>
+        </div>
+        <p>座ったまま安全に使える油圧式・空圧式マシンを中心にご用意。ひざや腰に不安のある方でも、無理なく続けられます。</p>
+        <div class="ph" data-label="マシンの写真"><img src="images/reason-01.webp" alt="" onerror="this.remove()"></div>
+      </div>
+      <div class="reason">
+        <div class="reason-head">
+          <span class="reason-no">理由<b>2</b></span>
+          <h3>スタッフが常駐<br>使い方を丁寧にご案内</h3>
+        </div>
+        <p>営業時間中はスタッフが常駐。マシンの使い方から運動メニューのご相談まで、お一人おひとりに寄り添います。</p>
+        <div class="ph" data-label="スタッフの写真"><img src="images/reason-02.webp" alt="" onerror="this.remove()"></div>
+      </div>
+      <div class="reason">
+        <div class="reason-head">
+          <span class="reason-no">理由<b>3</b></span>
+          <h3>月額だけの明朗会計<br>追加料金なし</h3>
+        </div>
+        <p>月会費だけで通い放題。入会金・事務手数料などの初期費用も、オープンキャンペーン中は0円です(仮)。</p>
+        <div class="ph" data-label="料金・受付の写真"><img src="images/reason-03.webp" alt="" onerror="this.remove()"></div>
+      </div>
+      <div class="reason">
+        <div class="reason-head">
+          <span class="reason-no">理由<b>4</b></span>
+          <h3>群馬3店舗<br>どこでも利用OK(仮)</h3>
+        </div>
+        <p>ご自宅の近くで、お出かけ先で。会員様は群馬県内3店舗すべてをご利用いただけます(仮)。</p>
+        <div class="ph" data-label="店舗外観の写真"><img src="images/reason-04.webp" alt="" onerror="this.remove()"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     料金・キャンペーン
+====================================================== -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">PRICE</span>
+      <h2 class="sec-title">オープン記念<br>特別価格のご案内</h2>
+    </div>
+    <div class="price-card">
+      <p class="plan-name">通い放題プラン(仮)</p>
+      <div class="price-compare">
+        <div class="price-box before">
+          <span class="label">通常価格</span>
+          <span class="amount">16,900</span><span class="yen">円</span>
+        </div>
+        <div class="price-arrow">▶</div>
+        <div class="price-box after">
+          <span class="label">キャンペーン価格</span>
+          <span class="amount">14,900</span><span class="yen">円(税込)</span>
+        </div>
+      </div>
+      <p class="price-forever">🎉 期間中にご入会いただくと、この月額が<br><b>退会されるまでずっと続く「永年割引」!</b></p>
+      <p class="price-deadline">お申し込みは <b>9/20(日)</b> まで</p>
+      <p class="price-note">※オープン記念の今回限りのキャンペーンです。次回開催の予定はありません。<br>※プラン名・価格の詳細条件はご支給内容に合わせて調整します。</p>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     ご入会までの流れ
+====================================================== -->
+<section class="flow" id="flow">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">FLOW</span>
+      <h2 class="sec-title">ご入会まで<br><span class="accent">かんたん3ステップ</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="step-no">STEP<b>1</b></span>
+        <div>
+          <h3>見学のご予約</h3>
+          <p>お電話またはWEBフォームからご予約ください。もちろん、予約なしのご来店も大歓迎です。</p>
+          <span class="chip">所要1分</span>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-no">STEP<b>2</b></span>
+        <div>
+          <h3>店内見学・体験</h3>
+          <p>スタッフが店内をご案内し、マシンを実際にお試しいただけます。気になることは何でもご質問ください。</p>
+          <span class="chip">約30分・無料</span>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-no">STEP<b>3</b></span>
+        <div>
+          <h3>ご入会手続き</h3>
+          <p>その場で15分ほどのお手続きで完了。最短で当日からご利用いただけます。</p>
+          <span class="chip">当日利用OK</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stripe" aria-hidden="true"></div>
+
+<!-- =====================================================
+     店舗情報
+====================================================== -->
+<section class="stores" id="stores">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">SHOP</span>
+      <h2 class="sec-title">店舗のご案内</h2>
+      <p class="note">※住所・営業時間・電話番号はすべて仮です。確定情報に差し替えます。</p>
+    </div>
+
+    <div class="store-card new">
+      <span class="store-tag">✨ 9月 NEW OPEN</span>
+      <div class="ph" data-label="新店舗の外観写真"><img src="images/store-new.webp" alt="" onerror="this.remove()"></div>
+      <div class="store-body">
+        <h3>〇〇店(3号店)<small>群馬県〇〇市</small></h3>
+        <table class="store-table">
+          <tr><th>住所</th><td>群馬県〇〇市〇〇町0-0-0(仮)</td></tr>
+          <tr><th>営業時間</th><td>9:00〜21:00(仮)</td></tr>
+          <tr><th>定休日</th><td>毎週〇曜日(仮)</td></tr>
+          <tr><th>電話</th><td><a href="tel:0000000000">000-000-0000(仮)</a></td></tr>
+          <tr><th>駐車場</th><td>あり・〇台(仮)</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="sisters">
+      <div class="sister">
+        <h4>△△店(1号店)</h4>
+        <p>群馬県△△市(仮)</p>
+        <span class="badge">営業中</span>
+      </div>
+      <div class="sister">
+        <h4>□□店(2号店)</h4>
+        <p>群馬県□□市(仮)</p>
+        <span class="badge">営業中</span>
+      </div>
+    </div>
+
+    <div class="sec-head" style="margin-top:44px" id="access">
+      <span class="eyebrow">ACCESS</span>
+      <h2 class="sec-title">地図・アクセス</h2>
+      <p class="note">※下の地図は仮(前橋市中心部)。住所確定後、新店舗の地図に差し替えます。</p>
+    </div>
+    <div class="map-frame">
+      <iframe
+        src="https://www.google.com/maps?q=%E7%BE%A4%E9%A6%AC%E7%9C%8C%E5%89%8D%E6%A9%8B%E5%B8%82&output=embed"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="店舗地図(仮)"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     よくあるご質問
+====================================================== -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Q&amp;A</span>
+      <h2 class="sec-title">よくあるご質問</h2>
+      <p class="note">※内容は仮です。実際によくいただくご質問に差し替えます。</p>
+    </div>
+    <dl>
+      <div class="qa">
+        <dt><span class="mark">Q</span>運動が苦手・まったくの初心者でも大丈夫ですか?</dt>
+        <dd><span class="mark">A</span>はい、ご安心ください。会員様の多くが運動未経験からのスタートです。スタッフが丁寧にサポートいたします。</dd>
+      </div>
+      <div class="qa">
+        <dt><span class="mark">Q</span>何を持っていけばいいですか?</dt>
+        <dd><span class="mark">A</span>動きやすい服装と室内用シューズ、お飲み物をお持ちください。見学だけなら手ぶらでOKです。</dd>
+      </div>
+      <div class="qa">
+        <dt><span class="mark">Q</span>70代でも入会できますか?</dt>
+        <dd><span class="mark">A</span>もちろんです。当ジムは60代・70代の会員様も多く、年齢に合わせた無理のないメニューをご提案しています。</dd>
+      </div>
+      <div class="qa">
+        <dt><span class="mark">Q</span>キャンペーン価格はいつまで続きますか?</dt>
+        <dd><span class="mark">A</span>9月20日(日)までにご入会いただいた方は、月額14,900円(税込)が退会されるまでずっと適用されます。</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<div class="stripe" aria-hidden="true"></div>
+
+<!-- =====================================================
+     お問い合わせ
+====================================================== -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">CONTACT</span>
+      <h2 class="sec-title">無料見学・ご入会予約</h2>
+    </div>
+    <div class="contact-card">
+      <p class="lead">キャンペーンは<br><span class="accent">9/20(日)まで!</span><br>まずはお気軽にご見学ください</p>
+      <div class="contact-cta">
+        <a class="btn btn-tel" href="tel:0000000000">📞 <span class="num">000-000-0000</span></a>
+        <a class="btn btn-primary" href="mailto:info@example.com?subject=%E8%A6%8B%E5%AD%A6%E4%BA%88%E7%B4%84%E5%B8%8C%E6%9C%9B">WEBで見学予約する<small>※フォームは仮(公開時に本実装)</small></a>
+      </div>
+      <p class="contact-hours">受付時間 9:00〜21:00(仮)/お電話の際は「ホームページを見た」とお伝えください</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="fbrand">ヘルスライフジム 〇〇店(仮)</p>
+  <p>群馬県〇〇市〇〇町0-0-0(仮)</p>
+  <p style="margin-top:14px;opacity:.7">© Health Life Gym(仮)</p>
+</footer>
+
+<!-- 下部固定CTA(スマホ・PC共通) -->
+<div class="fixed-cta">
+  <div class="fixed-cta-inner">
+    <a class="btn btn-tel" href="tel:0000000000">📞 電話する<small>タップで発信</small></a>
+    <a class="btn btn-primary" href="#contact">見学を予約<small>9/20まで特別価格</small></a>
+  </div>
+</div>
+
+</body>
+</html>
