@@ -271,21 +271,32 @@ header{
    人気の理由
 ========================================================= */
 .reasons{background:var(--ground)}
+.slash-lead{
+  font-family:var(--head);font-weight:900;font-size:16.5px;letter-spacing:.08em;
+  margin-bottom:6px;
+}
+.slash-lead span{color:var(--orange);font-weight:900}
+.tri-dots{display:flex;gap:9px;justify-content:center;margin-top:12px}
+.tri-dots span{width:8px;height:8px;border-radius:50%;background:var(--orange)}
 .reason-grid{display:grid;gap:20px}
 .reason{
-  background:var(--paper);border:1px solid var(--line);border-radius:8px;
-  padding:24px 20px;box-shadow:0 2px 10px rgba(34,26,19,.06);
+  background:var(--paper);border-radius:12px;
+  padding:16px 18px 18px;box-shadow:0 4px 16px rgba(34,26,19,.08);
+  display:flex;flex-direction:column;
 }
-.reason-head{display:flex;align-items:center;gap:14px;margin-bottom:10px}
-.reason-no{
-  flex:none;width:54px;height:54px;background:var(--grad);color:#fff;
-  font-family:var(--head);font-weight:900;font-size:11px;border-radius:6px;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;
+.reason-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.reason-no{ /* リボン型バッジ */
+  flex:none;width:46px;height:62px;background:var(--grad);color:#fff;
+  font-family:var(--head);font-weight:900;font-size:11.5px;
+  clip-path:polygon(0 0,100% 0,100% 100%,50% calc(100% - 11px),0 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+  padding-top:9px;line-height:1;margin-top:-16px;
+  filter:drop-shadow(0 2px 3px rgba(199,74,5,.3));
 }
-.reason-no b{font-family:var(--num);font-weight:600;font-size:24px;margin-top:2px}
-.reason h3{font-family:var(--head);font-weight:900;font-size:19.5px;line-height:1.5}
-.reason p{font-size:15.5px}
-.reason .ph{height:150px;margin-top:14px}
+.reason-no b{font-family:var(--num);font-weight:600;font-size:23px;margin-top:3px}
+.reason h3{flex:1;text-align:center;font-family:var(--head);font-weight:900;font-size:18.5px;line-height:1.5}
+.reason p{font-size:14.5px;line-height:1.85;margin-bottom:14px}
+.reason .ph{height:150px;margin-top:auto;border-radius:8px}
 
 /* =========================================================
    会員様の声
@@ -491,6 +502,8 @@ footer .fbrand{font-family:var(--head);font-weight:900;font-size:17px;margin-bot
 ========================================================= */
 @media (min-width:840px){
   body{font-size:17.5px}
+  .reasons>.wrap{max-width:1080px}
+  .reason h3{font-size:17.5px}
   .fv{ /* PC用背景(images/fv-bg-b-pc.webp)。無い間はグラデで表示 */
     background:
       url('images/fv-bg-b-pc.webp') center/cover no-repeat,
@@ -603,8 +616,9 @@ body::after{
 <section class="reasons" id="reasons">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">REASON</span>
-      <h2 class="sec-title">ヘルスライフジムが<br><span class="accent">人気の3つの理由</span></h2>
+      <p class="slash-lead"><span>＼</span> 選ばれる3つの理由 <span>／</span></p>
+      <h2 class="sec-title">続けやすく、結果が出るパーソナルジム</h2>
+      <p class="tri-dots" aria-hidden="true"><span></span><span></span><span></span></p>
       <p class="note">※内容は仮です。実際のサービスに合わせて差し替えます。</p>
     </div>
     <div class="reason-grid">
