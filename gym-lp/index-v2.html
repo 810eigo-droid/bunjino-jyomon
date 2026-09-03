@@ -145,6 +145,17 @@ header{
   pointer-events:none;
 }
 .fv .wrap{position:relative}
+/* 支給FV画像(images/fv-full-sp.webp / fv-full-pc.webp)。読み込めた時だけ表示され、
+   下のテキストFVと差し替わる。無い間はテキストFVのまま */
+.fv-hero{display:none;width:100%;height:auto}
+.fv.has-hero{padding-top:0}
+.fv.has-hero .fv-hero{display:block}
+.fv.has-hero .fv-open,.fv.has-hero .fv-catch,.fv.has-hero .fv-sub,
+.fv.has-hero .fv-visual,.fv.has-hero .fv-badges{display:none}
+.fv.has-hero .burst{margin-top:24px}
+@media (min-width:840px){
+  .fv.has-hero .fv-hero{max-width:1200px;margin:0 auto;border-radius:0 0 10px 10px}
+}
 .fv-open{
   display:flex;align-items:center;justify-content:center;gap:12px;
   font-family:var(--head);font-weight:900;color:var(--gold);
@@ -493,6 +504,13 @@ body::after{
      FV
 ====================================================== -->
 <div class="fv">
+  <picture>
+    <source media="(min-width:840px)" srcset="images/fv-full-pc.webp">
+    <img class="fv-hero" src="images/fv-full-sp.webp"
+      alt="群馬で愛されて3店舗目 〇〇店 9月NEW OPEN! 何歳からでも、体は変わる。楽しみながら、理想のカラダへ。だから続けられる、マンツーマンのパーソナルジム"
+      onload="this.closest('.fv').classList.add('has-hero')"
+      onerror="if(!this.dataset.f){this.dataset.f=1;this.closest('picture').querySelector('source').srcset='images/fv-full-pc.png';this.src='images/fv-full-sp.png'}">
+  </picture>
   <div class="wrap">
     <p class="fv-open">群馬で愛されて3店舗目 ─ 〇〇店 9月NEW OPEN!</p>
     <h1 class="fv-catch">何歳からでも、<br><span class="big">体は変わる。</span></h1>

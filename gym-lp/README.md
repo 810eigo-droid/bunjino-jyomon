@@ -45,8 +45,10 @@
 | ファイル名 | 用途 | 推奨サイズ |
 |---|---|---|
 | `images/fv-main.webp` | FVメイン写真(トレーニング風景) | 1200×700 |
-| `images/fv-bg-b.webp` | 【B案専用】FV背景・スマホ用(生成プロンプトはTONMANA-B.md) | 1080×1600 |
-| `images/fv-bg-b-pc.webp` | 【B案専用】FV背景・PC用(同上) | 1920×1080 |
+| `images/fv-full-sp.webp` | 【B案】支給の完成FV画像・スマホ用。入れるとFVのテキスト部分と自動で差し替わる(.pngでも可) | 1024×1536 |
+| `images/fv-full-pc.webp` | 【B案】支給の完成FV画像・PC用(.pngでも可) | 1920×1080 |
+| `images/fv-bg-b.webp` | 【B案】FV背景のみ使う場合・スマホ用(生成プロンプトはTONMANA-B.md) | 1080×1600 |
+| `images/fv-bg-b-pc.webp` | 【B案】FV背景のみ使う場合・PC用(同上) | 1920×1080 |
 | `images/reason-01.webp` | 理由1: マンツーマン指導 | 800×450 |
 | `images/reason-02.webp` | 理由2: 料金・受付 | 800×450 |
 | `images/reason-03.webp` | 理由3: トレーニング風景 | 800×450 |
