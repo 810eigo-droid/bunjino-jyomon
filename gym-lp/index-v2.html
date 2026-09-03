@@ -71,6 +71,32 @@ section{padding:60px 0}
 /* ---- ディバイダー(細いグラデライン) ---- */
 .stripe{height:6px;background:var(--grad)}
 
+/* ---- セクション背景の幾何学装飾(同系色・CSSのみ) ---- */
+section{position:relative}
+section>.wrap{position:relative;z-index:1}
+/* 暗い帯: 斜めスラッシュ+多角形+うすい放射線 */
+.pricing::before,.contact::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    repeating-conic-gradient(from -90deg at 78% -18%, rgba(240,120,24,.05) 0 4deg, transparent 4deg 9deg),
+    linear-gradient(115deg, transparent 58%, rgba(240,120,24,.10) 58% 78%, transparent 78%),
+    linear-gradient(295deg, transparent 72%, rgba(232,163,61,.09) 72% 90%, transparent 90%),
+    radial-gradient(circle at 8% 90%, rgba(240,120,24,.07) 0 110px, transparent 111px);
+}
+/* 生成りグレーの帯: 同系色の斜め帯+大きな円 */
+.reasons::before,.staff::before,.stores::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(circle at 92% 6%, rgba(240,120,24,.07) 0 95px, transparent 96px),
+    radial-gradient(circle at 4% 96%, rgba(232,163,61,.09) 0 75px, transparent 76px),
+    linear-gradient(115deg, transparent 64%, rgba(240,120,24,.05) 64% 84%, transparent 84%);
+}
+/* 白の帯: 見出しの背後にうすい放射線 */
+.worries::before,.voices::before,.flow::before,.faq::before{
+  content:"";position:absolute;inset:0 0 auto;height:230px;pointer-events:none;
+  background:repeating-conic-gradient(from -90deg at 50% -50px, rgba(240,120,24,.05) 0 5deg, transparent 5deg 11deg);
+}
+
 /* ---- 画像プレースホルダー ---- */
 .ph{
   position:relative;background:#EDE5D8;border:1px solid var(--line);
