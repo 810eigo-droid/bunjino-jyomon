@@ -40,7 +40,7 @@ body{
   color:var(--ink);
   background:var(--cream);
   -webkit-font-smoothing:antialiased;
-  padding-bottom:84px; /* 下部固定CTAぶん */
+  padding-bottom:58px; /* 下部固定CTAぶん */
 }
 img{max-width:100%;display:block}
 a{color:inherit}
@@ -96,7 +96,7 @@ section{padding:56px 0}
 .btn-primary small{font-weight:700;font-size:12px;display:block}
 .btn-tel{background:var(--green);color:#fff}
 .btn-tel .num{font-size:23px;letter-spacing:.03em}
-.btn-line{background:#06C755;color:#fff}
+.btn-line{background:#1E8A4C;color:#fff}
 .btn-line small{font-weight:700;font-size:12px;display:block}
 .btn-line svg{flex:none}
 
@@ -426,11 +426,11 @@ footer .fbrand{font-family:var(--head);font-weight:900;font-size:17px;margin-bot
 .fixed-cta{
   position:fixed;left:0;right:0;bottom:0;z-index:200;
   background:rgba(255,255,255,.96);box-shadow:0 -3px 14px rgba(64,48,31,.18);
-  padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+  padding:5px 8px calc(5px + env(safe-area-inset-bottom));
 }
-.fixed-cta-inner{max-width:680px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.fixed-cta .btn{min-height:52px;font-size:15px;box-shadow:none;border-radius:12px}
-.fixed-cta .btn small{font-size:10.5px;font-weight:700;display:block}
+.fixed-cta-inner{max-width:680px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.fixed-cta .btn{min-height:40px;font-size:14.5px;box-shadow:none;border-radius:10px;padding:4px 10px;gap:6px;white-space:nowrap}
+.fixed-cta .btn small{display:none}
 
 /* =========================================================
    PC(840px〜):中央寄せLPスタイル
