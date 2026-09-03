@@ -47,6 +47,8 @@
 | `images/fv-main.webp` | FVメイン写真(トレーニング風景) | 1200×700 |
 | `images/fv-full-sp.webp` | 【B案】支給の完成FV画像・スマホ用。入れるとFVのテキスト部分と自動で差し替わる(.pngでも可) | 1024×1536 |
 | `images/fv-full-pc.webp` | 【B案】支給の完成FV画像・PC用(.pngでも可) | 1920×1080 |
+| `images/campaign-full-sp.webp` | 【B案】キャンペーン枠の完成画像・スマホ用。入れるとHTML版の枠と自動差し替え(.pngでも可) | 横880px前後 |
+| `images/campaign-full-pc.webp` | 【B案】キャンペーン枠の完成画像・PC用(.pngでも可) | 横880〜1200px |
 | `images/fv-bg-b.webp` | 【B案】FV背景のみ使う場合・スマホ用(生成プロンプトはTONMANA-B.md) | 1080×1600 |
 | `images/fv-bg-b-pc.webp` | 【B案】FV背景のみ使う場合・PC用(同上) | 1920×1080 |
 | `images/reason-01.webp` | 理由1: マンツーマン指導 | 800×450 |
