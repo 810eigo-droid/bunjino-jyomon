@@ -244,6 +244,42 @@ header{
 .reason .ph{height:150px;margin-top:14px}
 
 /* =========================================================
+   会員様の声
+========================================================= */
+.voices{background:var(--white)}
+.voice-list{display:grid;gap:16px}
+.voice{
+  display:flex;gap:14px;align-items:flex-start;
+  background:var(--cream);border-radius:16px;padding:18px 16px;
+}
+.voice-ph{flex:none;width:86px;height:86px;border-radius:50%}
+.voice-ph::before{font-size:10px}
+.voice-meta{
+  display:inline-block;background:var(--yellow-pale);color:var(--deep);
+  font-weight:700;font-size:12.5px;border-radius:999px;padding:1px 12px;margin-bottom:6px;
+}
+.voice h3{font-family:var(--head);font-weight:900;font-size:16.5px;line-height:1.6;margin-bottom:4px}
+.voice-body>p:last-child{font-size:14.5px;line-height:1.8}
+
+/* =========================================================
+   スタッフ紹介
+========================================================= */
+.staff{background:var(--cream)}
+.staff-card{
+  background:var(--white);border-radius:16px;padding:22px 20px;
+  display:flex;gap:18px;align-items:flex-start;
+  box-shadow:0 3px 12px rgba(64,48,31,.08);
+}
+.staff-ph{flex:none;width:110px;height:110px;border-radius:16px}
+.staff-ph::before{font-size:10px}
+.staff-role{
+  display:inline-block;background:var(--orange-soft);color:var(--deep);
+  font-weight:700;font-size:12.5px;border-radius:999px;padding:1px 12px;margin-bottom:6px;
+}
+.staff-body h3{font-family:var(--head);font-weight:900;font-size:19px;margin-bottom:6px}
+.staff-body>p:last-child{font-size:14.5px;line-height:1.8}
+
+/* =========================================================
    料金(図解)
 ========================================================= */
 .pricing{background:var(--orange)}
@@ -435,7 +471,7 @@ body::after{
   <div class="wrap">
     <p class="fv-open">群馬で愛されて3店舗目 ─ 〇〇店 9月NEW OPEN!</p>
     <h1 class="fv-catch">何歳からでも、<br><span class="big">体は変わる。</span></h1>
-    <p class="fv-sub">30代から70代まで、みんなのための健康ジム。<br>運動が苦手でも、はじめてでも大丈夫。</p>
+    <p class="fv-sub">楽しみながら、理想のカラダへ。<br>だから続けられる、マンツーマンのパーソナルジム。</p>
 
     <div class="ph fv-visual" data-label="メイン写真が入ります
 (店内・トレーニング風景など/支給写真)">
@@ -443,8 +479,8 @@ body::after{
     </div>
 
     <div class="fv-badges">
-      <span>🏋️ マシン使い放題</span>
-      <span>🧑‍🏫 スタッフが丁寧サポート</span>
+      <span>🧑‍🏫 完全マンツーマン指導</span>
+      <span>😊 30〜70代・初心者歓迎</span>
       <span>🚗 駐車場完備(仮)</span>
     </div>
 
@@ -461,7 +497,7 @@ body::after{
     </div>
 
     <div class="fv-cta">
-      <a class="btn btn-primary" href="#contact">無料見学・入会のご予約<small>24時間受付・かんたん1分</small></a>
+      <a class="btn btn-primary" href="#contact">無料体験カウンセリングを予約<small>24時間受付・かんたん1分</small></a>
       <a class="btn btn-tel" href="tel:0000000000">📞 <span class="num">000-000-0000</span></a>
     </div>
   </div>
@@ -482,7 +518,7 @@ body::after{
       <li><span class="check">✓</span>最近、階段や坂道で息が切れるようになった</li>
       <li><span class="check">✓</span>健康診断の数値が気になってきた</li>
       <li><span class="check">✓</span>運動したいけど、何から始めればいいか分からない</li>
-      <li><span class="check">✓</span>ジムは若い人ばかりで気後れしそう…</li>
+      <li><span class="check">✓</span>きついトレーニングは続けられる自信がない</li>
       <li><span class="check">✓</span>ひとりだと、どうせ続かない気がする</li>
     </ul>
     <p class="worry-close">そのお悩み、ぜんぶ<br><span class="marker">当ジムにおまかせください!</span></p>
@@ -498,41 +534,72 @@ body::after{
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">REASON</span>
-      <h2 class="sec-title">ヘルスライフジムが<br><span class="accent">選ばれる4つの理由</span></h2>
-      <p class="note">※内容は仮です。実際の設備・サービスに合わせて差し替えます。</p>
+      <h2 class="sec-title">ヘルスライフジムが<br><span class="accent">人気の3つの理由</span></h2>
+      <p class="note">※内容は仮です。実際のサービスに合わせて差し替えます。</p>
     </div>
     <div class="reason-grid">
       <div class="reason">
         <div class="reason-head">
           <span class="reason-no">理由<b>1</b></span>
-          <h3>はじめてでも安心の<br>かんたんマシン</h3>
+          <h3>経験豊富なトレーナーの<br>完全マンツーマン指導</h3>
         </div>
-        <p>座ったまま安全に使える油圧式・空圧式マシンを中心にご用意。ひざや腰に不安のある方でも、無理なく続けられます。</p>
-        <div class="ph" data-label="マシンの写真"><img src="images/reason-01.webp" alt="" onerror="this.remove()"></div>
+        <p>お一人おひとりの体力・目標に合わせたオーダーメイドのトレーニング。ひざや腰に不安のある方も、無理のないメニューで安心です。</p>
+        <div class="ph" data-label="トレーニング指導の写真"><img src="images/reason-01.webp" alt="" onerror="this.remove()"></div>
       </div>
       <div class="reason">
         <div class="reason-head">
           <span class="reason-no">理由<b>2</b></span>
-          <h3>スタッフが常駐<br>使い方を丁寧にご案内</h3>
+          <h3>月額14,900円〜<br>続けやすいリーズナブル価格</h3>
         </div>
-        <p>営業時間中はスタッフが常駐。マシンの使い方から運動メニューのご相談まで、お一人おひとりに寄り添います。</p>
-        <div class="ph" data-label="スタッフの写真"><img src="images/reason-02.webp" alt="" onerror="this.remove()"></div>
+        <p>パーソナルジムは高い、をくつがえす料金設定。月額制だから、追加料金を気にせず理想のカラダづくりを続けられます。</p>
+        <div class="ph" data-label="料金・受付の写真"><img src="images/reason-02.webp" alt="" onerror="this.remove()"></div>
       </div>
       <div class="reason">
         <div class="reason-head">
           <span class="reason-no">理由<b>3</b></span>
-          <h3>月額だけの明朗会計<br>追加料金なし</h3>
+          <h3>楽しく続けられるから<br>効果が出る</h3>
         </div>
-        <p>月会費だけで通い放題。入会金・事務手数料などの初期費用も、オープンキャンペーン中は0円です(仮)。</p>
-        <div class="ph" data-label="料金・受付の写真"><img src="images/reason-03.webp" alt="" onerror="this.remove()"></div>
+        <p>きつさを我慢するトレーニングは続きません。楽しみながら通えるプログラムで、3店舗目を出せるほど多くの会員様に愛されています。</p>
+        <div class="ph" data-label="トレーニング風景の写真"><img src="images/reason-03.webp" alt="" onerror="this.remove()"></div>
       </div>
-      <div class="reason">
-        <div class="reason-head">
-          <span class="reason-no">理由<b>4</b></span>
-          <h3>群馬3店舗<br>どこでも利用OK(仮)</h3>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     会員様の声
+====================================================== -->
+<section class="voices" id="voices">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">VOICE</span>
+      <h2 class="sec-title">会員様の嬉しい声が<br><span class="accent">続々と届いています!</span></h2>
+      <p class="note">※内容は仮です。実際の会員様の声・お写真に差し替えます。</p>
+    </div>
+    <div class="voice-list">
+      <div class="voice">
+        <div class="ph voice-ph" data-label="会員様の写真"><img src="images/voice-01.webp" alt="" onerror="this.remove()"></div>
+        <div class="voice-body">
+          <p class="voice-meta">60代・女性(仮)</p>
+          <h3>「ひざの痛みが気にならなくなり、旅行が楽しみに」</h3>
+          <p>運動は数十年ぶりでしたが、トレーナーさんが毎回ようすを見ながら進めてくれるので安心です。</p>
         </div>
-        <p>ご自宅の近くで、お出かけ先で。会員様は群馬県内3店舗すべてをご利用いただけます(仮)。</p>
-        <div class="ph" data-label="店舗外観の写真"><img src="images/reason-04.webp" alt="" onerror="this.remove()"></div>
+      </div>
+      <div class="voice">
+        <div class="ph voice-ph" data-label="会員様の写真"><img src="images/voice-02.webp" alt="" onerror="this.remove()"></div>
+        <div class="voice-body">
+          <p class="voice-meta">40代・男性(仮)</p>
+          <h3>「健康診断の数値が改善。妻も一緒に通っています」</h3>
+          <p>この内容でこの月額は正直おどろきです。仕事帰りに無理なく続けられています。</p>
+        </div>
+      </div>
+      <div class="voice">
+        <div class="ph voice-ph" data-label="会員様の写真"><img src="images/voice-03.webp" alt="" onerror="this.remove()"></div>
+        <div class="voice-body">
+          <p class="voice-meta">70代・男性(仮)</p>
+          <h3>「マンツーマンだから、私のペースで大丈夫」</h3>
+          <p>同年代の会員さんも多く、通うのが毎週の楽しみになりました。</p>
+        </div>
       </div>
     </div>
   </div>
@@ -548,7 +615,7 @@ body::after{
       <h2 class="sec-title">オープン記念<br>特別価格のご案内</h2>
     </div>
     <div class="price-card">
-      <p class="plan-name">通い放題プラン(仮)</p>
+      <p class="plan-name">パーソナルトレーニング 月額プラン(仮)</p>
       <div class="price-compare">
         <div class="price-box before">
           <span class="label">通常価格</span>
@@ -562,7 +629,7 @@ body::after{
       </div>
       <p class="price-forever">🎉 期間中にご入会いただくと、この月額が<br><b>退会されるまでずっと続く「永年割引」!</b></p>
       <p class="price-deadline">お申し込みは <b>9/20(日)</b> まで</p>
-      <p class="price-note">※オープン記念の今回限りのキャンペーンです。次回開催の予定はありません。<br>※プラン名・価格の詳細条件はご支給内容に合わせて調整します。</p>
+      <p class="price-note">※オープン記念の今回限りのキャンペーンです。次回開催の予定はありません。<br>※プラン名・入会金・回数などの詳細条件はご支給内容に合わせて調整します。</p>
     </div>
   </div>
 </section>
@@ -574,32 +641,61 @@ body::after{
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">FLOW</span>
-      <h2 class="sec-title">ご入会まで<br><span class="accent">かんたん3ステップ</span></h2>
+      <h2 class="sec-title">体験カウンセリングの<br><span class="accent">流れ</span></h2>
     </div>
     <div class="steps">
       <div class="step">
         <span class="step-no">STEP<b>1</b></span>
         <div>
-          <h3>見学のご予約</h3>
-          <p>お電話またはWEBフォームからご予約ください。もちろん、予約なしのご来店も大歓迎です。</p>
+          <h3>ご予約</h3>
+          <p>お電話またはWEBフォームからご予約ください。ご希望の日時をお選びいただけます。</p>
           <span class="chip">所要1分</span>
         </div>
       </div>
       <div class="step">
         <span class="step-no">STEP<b>2</b></span>
         <div>
-          <h3>店内見学・体験</h3>
-          <p>スタッフが店内をご案内し、マシンを実際にお試しいただけます。気になることは何でもご質問ください。</p>
-          <span class="chip">約30分・無料</span>
+          <h3>カウンセリング</h3>
+          <p>お悩みや目標、体の不安なところをじっくりおうかがいします。気になることは何でもご質問ください。</p>
+          <span class="chip">無料</span>
         </div>
       </div>
       <div class="step">
         <span class="step-no">STEP<b>3</b></span>
         <div>
-          <h3>ご入会手続き</h3>
-          <p>その場で15分ほどのお手続きで完了。最短で当日からご利用いただけます。</p>
-          <span class="chip">当日利用OK</span>
+          <h3>体験トレーニング</h3>
+          <p>トレーナーと一緒に、実際のトレーニングを無理のない範囲でお試しいただけます。</p>
+          <span class="chip">動きやすい服装でOK</span>
         </div>
+      </div>
+      <div class="step">
+        <span class="step-no">STEP<b>4</b></span>
+        <div>
+          <h3>ご入会手続き</h3>
+          <p>ご納得いただけたら、15分ほどのお手続きで完了。無理な勧誘は一切いたしません。</p>
+          <span class="chip">その場で入会OK</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     スタッフ紹介
+====================================================== -->
+<section class="staff" id="staff">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">STAFF</span>
+      <h2 class="sec-title">スタッフ紹介</h2>
+      <p class="note">※お名前・経歴・お写真は支給データに差し替えます。</p>
+    </div>
+    <div class="staff-card">
+      <div class="ph staff-ph" data-label="トレーナーの写真"><img src="images/staff-01.webp" alt="" onerror="this.remove()"></div>
+      <div class="staff-body">
+        <p class="staff-role">〇〇店 トレーナー(仮)</p>
+        <h3>山田 太郎(仮)</h3>
+        <p>指導歴〇年。「運動がはじめての方こそ、ぜひお任せください。お一人おひとりのペースで、楽しく続けられるトレーニングをご提案します。まずはお気軽にお話を聞かせてください!」</p>
       </div>
     </div>
   </div>
@@ -676,8 +772,12 @@ body::after{
         <dd><span class="mark">A</span>はい、ご安心ください。会員様の多くが運動未経験からのスタートです。スタッフが丁寧にサポートいたします。</dd>
       </div>
       <div class="qa">
-        <dt><span class="mark">Q</span>何を持っていけばいいですか?</dt>
-        <dd><span class="mark">A</span>動きやすい服装と室内用シューズ、お飲み物をお持ちください。見学だけなら手ぶらでOKです。</dd>
+        <dt><span class="mark">Q</span>きついトレーニングをさせられませんか?</dt>
+        <dd><span class="mark">A</span>ご安心ください。マンツーマンで体力に合わせてメニューを組むので、無理なく「楽しく続けられる」ことを一番大切にしています。</dd>
+      </div>
+      <div class="qa">
+        <dt><span class="mark">Q</span>体験カウンセリングには何を持っていけばいいですか?</dt>
+        <dd><span class="mark">A</span>動きやすい服装と室内用シューズ、お飲み物をお持ちください。カウンセリングのみなら手ぶらでOKです。</dd>
       </div>
       <div class="qa">
         <dt><span class="mark">Q</span>70代でも入会できますか?</dt>
@@ -700,13 +800,13 @@ body::after{
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">CONTACT</span>
-      <h2 class="sec-title">無料見学・ご入会予約</h2>
+      <h2 class="sec-title">無料体験カウンセリング<br>ご予約はこちら</h2>
     </div>
     <div class="contact-card">
-      <p class="lead">キャンペーンは<br><span class="accent">9/20(日)まで!</span><br>まずはお気軽にご見学ください</p>
+      <p class="lead">キャンペーンは<br><span class="accent">9/20(日)まで!</span><br>まずはお気軽にご相談ください</p>
       <div class="contact-cta">
         <a class="btn btn-tel" href="tel:0000000000">📞 <span class="num">000-000-0000</span></a>
-        <a class="btn btn-primary" href="mailto:info@example.com?subject=%E8%A6%8B%E5%AD%A6%E4%BA%88%E7%B4%84%E5%B8%8C%E6%9C%9B">WEBで見学予約する<small>※フォームは仮(公開時に本実装)</small></a>
+        <a class="btn btn-primary" href="mailto:info@example.com?subject=%E4%BD%93%E9%A8%93%E3%82%AB%E3%82%A6%E3%83%B3%E3%82%BB%E3%83%AA%E3%83%B3%E3%82%B0%E4%BA%88%E7%B4%84%E5%B8%8C%E6%9C%9B">WEBでカウンセリングを予約<small>※フォームは仮(公開時に本実装)</small></a>
       </div>
       <p class="contact-hours">受付時間 9:00〜21:00(仮)/お電話の際は「ホームページを見た」とお伝えください</p>
     </div>
@@ -723,7 +823,7 @@ body::after{
 <div class="fixed-cta">
   <div class="fixed-cta-inner">
     <a class="btn btn-tel" href="tel:0000000000">📞 電話する<small>タップで発信</small></a>
-    <a class="btn btn-primary" href="#contact">見学を予約<small>9/20まで特別価格</small></a>
+    <a class="btn btn-primary" href="#contact">無料体験を予約<small>9/20まで特別価格</small></a>
   </div>
 </div>
 
