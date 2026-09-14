@@ -137,3 +137,23 @@ html{scroll-padding-bottom:calc(64px + env(safe-area-inset-bottom,0px))}
 @media(max-width:640px){.farewell-banner{max-width:440px;border-radius:22px 6px;margin-bottom:30px}.farewell-banner>p{display:block;top:6%;bottom:auto;font-size:clamp(20px,5.8vw,27px);line-height:1.85;padding:0 6px}.farewell-pc-break{display:none}}
 .farewell-banner>p{display:block;top:50%;bottom:auto;transform:translateY(-50%)}
 @media(max-width:640px){.farewell-banner>p{top:6%;transform:none}}
+/* Rose and silver editorial testimonials; sample status remains explicit. */
+#voices{background:radial-gradient(ellipse at 0% 22%,#ffffffc9,transparent 42%),radial-gradient(ellipse at 100% 75%,#dce0e88a,transparent 44%),linear-gradient(135deg,#fce4ef,#faedf3 48%,#f4d7e6)}
+.voices-wrap{width:calc(100% - 36px);max-width:900px;margin:auto}
+#voices h2{color:#a91959;margin-bottom:16px}
+.voices-note{text-align:center;font-size:13px;line-height:1.8;color:#795565;margin:0 0 36px}
+.voice-cards{display:grid;gap:28px}
+.voice-card{position:relative;display:grid;grid-template-columns:104px minmax(0,1fr);gap:26px;align-items:start;padding:32px;background:linear-gradient(125deg,#ffffffed,#fffafd);border:1px solid #ffffff;border-radius:28px 8px;box-shadow:0 8px 28px #9f4c7210}
+.voice-card:nth-child(even){grid-template-columns:minmax(0,1fr) 104px;border-radius:8px 28px}
+.voice-card:nth-child(even) .voice-avatar{grid-column:2;grid-row:1}
+.voice-card:nth-child(even) .voice-copy{grid-column:1;grid-row:1}
+.voice-card:after{content:'✧';position:absolute;right:13px;top:-24px;font-size:42px;line-height:1;color:#aeb4c3;text-shadow:0 0 10px #fff,0 0 3px #fff;pointer-events:none}
+.voice-card:nth-child(even):after{right:auto;left:15px}
+.voice-avatar{width:104px;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 30% 20%,#fff,#f5e5ee 70%,#d6d5df);border:3px solid white;outline:1px solid #d8cbd6;box-shadow:0 4px 14px #98869c18}
+.voice-avatar span{font:italic 12px Georgia,serif;color:#947383}
+.voice-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.voice-label{font-size:11px;letter-spacing:.12em;color:#9b657e;margin:0 0 12px}
+.voice-copy h3{font-size:25px;color:#ac1e60;line-height:1.65;margin:0 0 18px}
+.voice-copy>p:not(.voice-label):not(.voice-end){font-size:16px;line-height:1.95;margin-bottom:18px}
+.voice-end{border-top:1px solid #ecd5e2;padding-top:13px;margin:0;color:#96506e;font-size:14px}
+@media(max-width:640px){.voices-wrap{width:calc(100% - 28px)}#voices h2{font-size:25px}.voices-note{font-size:12px;padding:0 5px}.voice-cards{gap:25px}.voice-card,.voice-card:nth-child(even){grid-template-columns:1fr;gap:19px;padding:25px 21px}.voice-card:nth-child(even) .voice-avatar,.voice-card:nth-child(even) .voice-copy{grid-column:1;grid-row:auto}.voice-avatar{width:76px}.voice-card:nth-child(even) .voice-avatar{justify-self:end}.voice-copy h3{font-size:21px;line-height:1.65}.voice-copy>p:not(.voice-label):not(.voice-end){font-size:16px}.voice-end{font-size:13px}}
