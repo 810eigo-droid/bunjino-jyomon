@@ -34,3 +34,14 @@
 .benefit-art{aspect-ratio:3/4}
 @media(min-width:800px){#changes>.wrap{max-width:1120px}#changes h2 br{display:none}.cards.benefits{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.cards.benefits article{grid-template-columns:30px minmax(0,1fr) 65px;padding:25px 20px;column-gap:12px;row-gap:12px}.benefits .number{font-size:25px}.benefits h3{grid-column:2/-1;font-size:25px}.benefits ul{font-size:17px;line-height:1.75}.benefit-art{grid-row:2}}
 @media(min-width:1100px){.cards.benefits article{grid-template-columns:34px minmax(0,1fr) 90px;padding:27px 24px;column-gap:14px}.benefits h3{font-size:27px}}
+/* Client's vivid pink: focused accents on actions and progression. */
+:root{--pink:#ec1678;--pink-action:#c91464}
+.button{background:var(--pink-action);border-color:var(--pink-action);box-shadow:0 8px 22px #ec16781c}.button:hover:not(:disabled){background:#ad1055}
+.benefits .number{color:var(--pink)}.benefits li:before{background:var(--pink)}.text-link{border-color:var(--pink)}.kicker:before{background:var(--pink)}.price-main{color:var(--pink-action)}
+#steps h2{color:var(--pink-action)}
+.cards.steps{grid-template-columns:minmax(0,1fr);gap:0}
+.cards.steps article{position:relative;display:grid;grid-template-columns:44px minmax(0,1fr);gap:20px;border:0;border-radius:0;background:transparent;padding:0 0 30px}
+.steps article:not(:last-child):before{content:'';position:absolute;left:21px;top:43px;bottom:0;width:1px;background:#ef8bb7}
+.steps .number{position:relative;z-index:1;width:44px;height:44px;border:0;background:var(--pink-action);color:white;font-size:23px}
+.steps .step-label{color:var(--pink-action);font-size:14px}.steps h3{color:#a72a61}
+@media(min-width:1000px){.cards.steps{grid-template-columns:repeat(4,minmax(0,1fr));gap:0}.cards.steps article{display:block;text-align:center;padding:0 20px}.steps .number{margin:0 auto 15px;display:flex}.steps article:not(:last-child):before{left:50%;right:-50%;width:auto;top:22px;bottom:auto;height:1px}.steps h3{font-size:23px;min-height:3.3em}.steps .step-label{margin-bottom:15px}.steps article p:last-child{text-align:left;font-size:17px;line-height:1.8}}
