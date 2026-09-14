@@ -130,3 +130,10 @@ html{scroll-padding-bottom:calc(64px + env(safe-area-inset-bottom,0px))}
 :root[data-motion='paused'] .pink-point{animation-play-state:paused;will-change:auto}
 @media(max-width:640px){.pink-point{left:5px;width:14px;height:14px;box-shadow:10px -25px 0 -4px #dd5d96;animation-name:point-float-mobile}@keyframes point-float-mobile{from{transform:translate3d(0,0,0)}to{transform:translate3d(3px,-26px,0)}}}
 @media(prefers-reduced-motion:reduce){.bubble,.pink-point{animation:none;will-change:auto}}
+/* Closing scene: text sits in the supplied image's clear space. */
+.farewell-banner{position:relative;max-width:880px;margin:0 auto 40px;overflow:hidden;border-radius:30px 8px}
+.farewell-banner picture,.farewell-banner img{display:block;width:100%;height:auto}
+.farewell-banner>p{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;margin:0;text-align:center;font-family:var(--serif);font-size:clamp(23px,2.5vw,30px);line-height:1.9;letter-spacing:.02em;color:var(--rose)}
+@media(max-width:640px){.farewell-banner{max-width:440px;border-radius:22px 6px;margin-bottom:30px}.farewell-banner>p{display:block;top:6%;bottom:auto;font-size:clamp(20px,5.8vw,27px);line-height:1.85;padding:0 6px}.farewell-pc-break{display:none}}
+.farewell-banner>p{display:block;top:50%;bottom:auto;transform:translateY(-50%)}
+@media(max-width:640px){.farewell-banner>p{top:6%;transform:none}}
