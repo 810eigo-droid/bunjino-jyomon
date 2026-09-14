@@ -21,3 +21,7 @@ https://korekara-counseling.ricky-o.chatgpt.site
 
 ## 参考
 https://github.com/810eigo-droid/bunjino-jyomon/blob/claude/bunnji-jomon-lp-design-rj8isd/korekara-counseling/DESIGN-FRAMEWORK.md
+
+## 4つの変化のデザイン
+参考画像に合わせてスマホは縦1列、800px以上のPCは2列×2段のカード。ピンク番号・区切り線・線画を使用。本文はスマホ17pxを維持。装飾画像は内蔵ImageGenで生成した dist/images/benefit-icons.webp。原本は ../output/imagegen/benefit-icons.png。プロンプト：four equally spaced feminine thin plum line art icons on ivory: woman profile with pink heart, signpost, intertwined hearts, pink leaf sprout; no text; consistent scale.
+
