@@ -45,3 +45,12 @@
 .steps .number{position:relative;z-index:1;width:44px;height:44px;border:0;background:var(--pink-action);color:white;font-size:23px}
 .steps .step-label{color:var(--pink-action);font-size:14px}.steps h3{color:#a72a61}
 @media(min-width:1000px){.cards.steps{grid-template-columns:repeat(4,minmax(0,1fr));gap:0}.cards.steps article{display:block;text-align:center;padding:0 20px}.steps .number{margin:0 auto 15px;display:flex}.steps article:not(:last-child):before{left:50%;right:-50%;width:auto;top:22px;bottom:auto;height:1px}.steps h3{font-size:23px;min-height:3.3em}.steps .step-label{margin-bottom:15px}.steps article p:last-child{text-align:left;font-size:17px;line-height:1.8}}
+/* Gentle section transitions, sized for mobile first. */
+:root{--divider-height:22px}
+.section.blush{position:relative;isolation:isolate}
+.section.blush:before,.section.blush:after{content:'';position:absolute;left:0;width:100%;height:var(--divider-height);background:var(--paper);pointer-events:none;z-index:-1}
+.section.blush:before{top:-1px;clip-path:ellipse(60% 92% at 40% 0%)}
+.section.blush:after{bottom:-1px;clip-path:ellipse(65% 92% at 65% 100%)}
+#changes:before{clip-path:polygon(0 0,100% 0,100% 12%,0 95%)}
+#session:before{clip-path:polygon(0 0,100% 0,100% 95%,0 12%)}
+@media(min-width:800px){:root{--divider-height:38px}}
