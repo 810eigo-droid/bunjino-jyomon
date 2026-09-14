@@ -157,3 +157,12 @@ html{scroll-padding-bottom:calc(64px + env(safe-area-inset-bottom,0px))}
 .voice-copy>p:not(.voice-label):not(.voice-end){font-size:16px;line-height:1.95;margin-bottom:18px}
 .voice-end{border-top:1px solid #ecd5e2;padding-top:13px;margin:0;color:#96506e;font-size:14px}
 @media(max-width:640px){.voices-wrap{width:calc(100% - 28px)}#voices h2{font-size:25px}.voices-note{font-size:12px;padding:0 5px}.voice-cards{gap:25px}.voice-card,.voice-card:nth-child(even){grid-template-columns:1fr;gap:19px;padding:25px 21px}.voice-card:nth-child(even) .voice-avatar,.voice-card:nth-child(even) .voice-copy{grid-column:1;grid-row:auto}.voice-avatar{width:76px}.voice-card:nth-child(even) .voice-avatar{justify-self:end}.voice-copy h3{font-size:21px;line-height:1.65}.voice-copy>p:not(.voice-label):not(.voice-end){font-size:16px}.voice-end{font-size:13px}}
+/* Brushed silver accents, kept to fine edges and small highlights. */
+:root{--silver-sheen:linear-gradient(110deg,#a4a6ab 0%,#e8e9eb 18%,#b8bbc0 34%,#fff 49%,#c4c7cc 63%,#f4f4f5 80%,#a8abb1 100%)}
+.voice-card{border:1px solid transparent;background:linear-gradient(125deg,#fffdfefe,#fff9fc) padding-box,var(--silver-sheen) border-box}
+.voice-avatar{outline-color:#c0c2c8;background:radial-gradient(circle at 32% 25%,#fff,#f3e7ee 64%,#c9cbd1)}
+#voices h2:after{content:'';display:block;width:112px;height:3px;margin:20px auto 0;border-radius:999px;background:var(--silver-sheen)}
+.price-card{position:relative;border:2px solid transparent;background:linear-gradient(#fffdfc,#fffafc) padding-box,var(--silver-sheen) border-box;box-shadow:0 12px 36px #895c7514}
+.price-card:before{content:'';position:absolute;top:-3px;left:calc(50% - 48px);width:96px;height:5px;border-radius:999px;background:var(--silver-sheen)}
+.offer-label{border:1px solid #c7c4cc;background:linear-gradient(120deg,#fff6fa,#f5dce8 55%,#f6f3f6);box-shadow:inset 0 1px 0 #fff}
+.footer{border-image:var(--silver-sheen) 1}
