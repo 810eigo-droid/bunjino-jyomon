@@ -120,3 +120,13 @@ html{scroll-padding-bottom:calc(64px + env(safe-area-inset-bottom,0px))}
 .invitation-banner img{display:block;width:100%;height:auto}
 .invitation-banner h2{position:absolute;inset:0;display:flex;align-items:center;padding:24px 6%;margin:0;font-size:clamp(27px,3.2vw,36px);line-height:1.8;letter-spacing:.02em}
 @media(max-width:640px){.invitation-intro{max-width:440px;width:calc(100% - 28px)}.invitation-banner{display:flex;flex-direction:column;border-radius:0}.invitation-banner h2{position:static;order:-1;display:block;text-align:center;padding:0;margin:0 0 24px;font-size:28px}.invitation-banner img{border-radius:22px 6px}}
+/* More visible floating accents, including the previously static pink points. */
+.bubble{animation-name:airy-float;animation-duration:7s}
+.bubble-silver{animation-duration:9s;animation-delay:-3s}
+.bubble-small{animation-duration:6s;animation-delay:-2s}
+.pink-point{width:22px;height:22px;background:#ce0d67;box-shadow:26px -32px 0 -5px #dd5d96;animation:point-float 5s ease-in-out infinite alternate;will-change:transform}
+@keyframes airy-float{0%{transform:translate3d(0,0,0)}50%{transform:translate3d(-7px,-21px,0)}100%{transform:translate3d(10px,-42px,0)}}
+@keyframes point-float{0%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(9px,-16px,0) scale(1.06)}100%{transform:translate3d(-5px,-34px,0) scale(1)}}
+:root[data-motion='paused'] .pink-point{animation-play-state:paused;will-change:auto}
+@media(max-width:640px){.pink-point{left:5px;width:14px;height:14px;box-shadow:10px -25px 0 -4px #dd5d96;animation-name:point-float-mobile}@keyframes point-float-mobile{from{transform:translate3d(0,0,0)}to{transform:translate3d(3px,-26px,0)}}}
+@media(prefers-reduced-motion:reduce){.bubble,.pink-point{animation:none;will-change:auto}}
