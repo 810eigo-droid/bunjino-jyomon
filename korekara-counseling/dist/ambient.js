@@ -8,7 +8,7 @@
     document.documentElement.dataset.motion = stopped ? 'paused' : 'running';
     button.hidden = preference.matches;
     button.setAttribute('aria-pressed', String(stopped));
-    button.textContent = stopped ? '背景の動きを再開' : '背景の動きを止める';
+    button.textContent = stopped ? '動きを再開' : '動きを止める';
   }
   button.addEventListener('click', () => {
     paused = !paused;
