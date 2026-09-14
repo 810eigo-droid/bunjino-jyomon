@@ -92,3 +92,15 @@
 .worries-banner picture,.worries-banner img{display:block;width:100%;height:auto}
 .worries-banner h2{position:absolute;inset:0;display:flex;align-items:center;margin:0;padding:24px 5%;font-size:clamp(26px,3.2vw,34px);line-height:1.8;letter-spacing:.02em;color:#91405f}
 @media(max-width:640px){.worries-intro{width:calc(100% - 28px);max-width:440px;margin-bottom:28px}.worries-intro .kicker{padding:0 8px}.worries-banner{border-radius:22px 6px}.worries-banner h2{position:absolute;width:1px;height:1px;inset:auto;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}}
+/* Compact application bar: 44px touch target plus device safe area. */
+.floating-apply{position:fixed;inset:auto 0 0;z-index:30;background:#fff0f6f5;border-top:1px solid #edabc8;padding:4px 12px calc(4px + env(safe-area-inset-bottom,0px));box-shadow:0 -3px 16px #a7195712;backdrop-filter:blur(10px)}
+.floating-apply a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;max-width:600px;margin:auto;padding:0 18px;border-radius:999px;background:linear-gradient(105deg,#d82c7a,#bd145f);color:#fff;font-size:14px;line-height:1.4}
+.floating-apply-label{font-size:12px;letter-spacing:.025em}
+.floating-apply-action{font-weight:600;white-space:nowrap}
+.floating-apply-action>span{margin-left:8px}
+.floating-apply a:hover{background:#b61158}
+.motion-control{bottom:calc(62px + env(safe-area-inset-bottom,0px));min-height:32px;padding:5px 10px;font-size:11px}
+.footer{padding-bottom:calc(140px + env(safe-area-inset-bottom,0px))}
+html{scroll-padding-bottom:calc(64px + env(safe-area-inset-bottom,0px))}
+@media(max-width:640px){.floating-apply{padding:0 8px env(safe-area-inset-bottom,0px)}.floating-apply a{border-radius:0;min-height:44px;padding:0 12px;background:transparent;color:#b51059}.floating-apply-action{padding:7px 13px;border-radius:999px;background:#c91464;color:#fff;font-size:13px}.floating-apply a:hover{background:#ffe6f0}.floating-apply-label{font-size:11px}.motion-control{bottom:calc(52px + env(safe-area-inset-bottom,0px))}}
+@media(max-width:359px){.floating-apply a{gap:6px;padding:0 3px}.floating-apply-action{padding:7px 9px;font-size:12px}.floating-apply-action>span{margin-left:4px}}
