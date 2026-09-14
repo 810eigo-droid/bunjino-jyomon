@@ -85,3 +85,10 @@
 .cards.benefits article{box-shadow:0 3px 15px #c50e6208;border-top:2px solid #edb0cc}
 .offer-label{background:#f9d6e6;color:#a71053}
 @media(max-width:640px){.bubble-pink{width:68px;height:68px;left:-38px}.bubble-silver{width:80px;height:80px;right:-46px}.pink-point{left:7px;width:7px;height:7px;box-shadow:8px -20px 0 -2px #c50e6266}.section.blush:after{height:25px}}
+/* User-supplied heading artwork, with independent mobile composition. */
+.worries-intro{width:calc(100% - 44px);max-width:880px;margin:0 auto 36px}
+.worries-intro .kicker{width:100%}
+.worries-banner{position:relative;overflow:hidden;border-radius:30px 8px 30px 8px}
+.worries-banner picture,.worries-banner img{display:block;width:100%;height:auto}
+.worries-banner h2{position:absolute;inset:0;display:flex;align-items:center;margin:0;padding:24px 5%;font-size:clamp(26px,3.2vw,34px);line-height:1.8;letter-spacing:.02em;color:#91405f}
+@media(max-width:640px){.worries-intro{width:calc(100% - 28px);max-width:440px;margin-bottom:28px}.worries-intro .kicker{padding:0 8px}.worries-banner{border-radius:22px 6px}.worries-banner h2{position:absolute;width:1px;height:1px;inset:auto;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}}
