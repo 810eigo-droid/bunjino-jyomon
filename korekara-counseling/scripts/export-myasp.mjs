@@ -1,0 +1,11 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const css=fs.readFileSync(path.join(root,'dist/style.css'),'utf8');
+const html=fs.readFileSync(path.join(root,'dist/index.html'),'utf8').replace('<link rel="stylesheet" href="style.css">',`<style>\n${css}\n</style>`);
+const target=path.join(root,'delivery/myasp');
+fs.mkdirSync(path.join(target,'images'),{recursive:true});
+fs.writeFileSync(path.join(target,'index.html'),html);
+fs.copyFileSync(path.join(root,'dist/images/hero-desktop.webp'),path.join(target,'images/hero-desktop.webp'));
+console.log('MyASP HTML and image exported.');
