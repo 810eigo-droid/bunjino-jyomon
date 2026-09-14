@@ -73,3 +73,15 @@
 @media(min-width:900px){.bubble-pink{left:2%;width:94px;height:94px}.bubble-silver{right:1%;width:128px;height:128px}.bubble-small{right:8%}.pink-point{left:7%}}
 @media(max-width:640px){.bubble-pink{width:48px;height:48px;left:-29px}.bubble-silver{width:62px;height:62px;right:-41px}.bubble-small{display:none}.pink-point{left:7px;width:4px;height:4px}.motion-control{right:8px;bottom:8px}.footer{padding-bottom:78px}}
 @media(prefers-reduced-motion:reduce){.bubble{animation:none;will-change:auto}.motion-control{display:none}}
+/* Rose accents: translucent marbles and a ribbon of colour at transitions. */
+:root{--accent-rose:#c50e62}
+.bubble-pink{border:1px solid #c50e6266;background:radial-gradient(circle at 29% 23%,#fff9 0 8%,#ee92bc55 30%,#d632823b 66%,#c50e624d 100%);box-shadow:inset -8px -9px 18px #c50e6214,0 6px 20px #c50e620a}
+.bubble-silver{border-color:#b4a7b99c;background:radial-gradient(circle at 28% 22%,#ffffffdf,#dfcad85c 45%,#b6adb540 80%)}
+.bubble-small{width:38px;height:38px;border-color:#c50e6270;background:#c50e622b}
+.pink-point{width:10px;height:10px;background:var(--accent-rose);box-shadow:17px -24px 0 -2px #c50e6266}
+#changes{background:linear-gradient(135deg,#fce8f1,#f6e8f0 72%,#f9ddea)}
+#worries,#session{background:linear-gradient(130deg,#fff2f6,#f9deea 65%,#ffedf4)}
+.section.blush:after{height:calc(var(--divider-height) + 8px);background:linear-gradient(105deg,#f4b2cf 0%,#e575a8 58%,#c50e62 100%);clip-path:polygon(0 68%,32% 30%,67% 75%,100% 12%,100% 100%,0 100%)}
+.cards.benefits article{box-shadow:0 3px 15px #c50e6208;border-top:2px solid #edb0cc}
+.offer-label{background:#f9d6e6;color:#a71053}
+@media(max-width:640px){.bubble-pink{width:68px;height:68px;left:-38px}.bubble-silver{width:80px;height:80px;right:-46px}.pink-point{left:7px;width:7px;height:7px;box-shadow:8px -20px 0 -2px #c50e6266}.section.blush:after{height:25px}}
