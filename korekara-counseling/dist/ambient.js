@@ -1,20 +1,8 @@
 (() => {
-  const button = document.querySelector('.motion-control');
   const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
-  let paused = false;
-  try { paused = localStorage.getItem('korekara-motion-paused') === 'true'; } catch {}
-  function render() {
-    const stopped = paused || preference.matches;
-    document.documentElement.dataset.motion = stopped ? 'paused' : 'running';
-    button.hidden = preference.matches;
-    button.setAttribute('aria-pressed', String(stopped));
-    button.textContent = stopped ? '動きを再開' : '動きを止める';
-  }
-  button.addEventListener('click', () => {
-    paused = !paused;
-    try { localStorage.setItem('korekara-motion-paused', String(paused)); } catch {}
-    render();
-  });
+  const render = () => {
+    document.documentElement.dataset.motion = preference.matches ? 'paused' : 'running';
+  };
   preference.addEventListener('change', render);
   render();
 })();

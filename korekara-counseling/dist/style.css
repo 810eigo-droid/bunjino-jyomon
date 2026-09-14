@@ -169,3 +169,9 @@ html{scroll-padding-bottom:calc(64px + env(safe-area-inset-bottom,0px))}
 .voice-avatar{overflow:hidden}
 .voice-avatar img{display:block;aspect-ratio:1;object-position:center}
 @media(max-width:640px){.voice-avatar{width:88px}}
+/* A longer silver underline with a passing highlight. */
+#voices h2:after{width:70%;max-width:460px;height:5px;margin:24px auto 34px;background:linear-gradient(105deg,#a2a5ac 0%,#d9dbe0 20%,#fff 35%,#babdc5 48%,#f5f6f8 65%,#a2a5ac 85%,#d9dbe0 100%);background-size:220% 100%;animation:silver-stream 4s linear infinite;box-shadow:0 1px 2px #9b8d9c20}
+@keyframes silver-stream{from{background-position:220% 0}to{background-position:0 0}}
+.profile-pending{margin-top:24px}
+@media(max-width:640px){#voices h2:after{width:78%;height:4px;margin-top:20px}}
+@media(prefers-reduced-motion:reduce){#voices h2:after{animation:none}}
