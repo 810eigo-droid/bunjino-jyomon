@@ -15,7 +15,7 @@
   document.querySelectorAll('h2').forEach((el, i) => targets.set(el, i % 2 ? 'right' : 'left'));
   document.querySelectorAll('h3').forEach(el => targets.set(el, 'rise'));
   document.querySelectorAll('.worries-banner picture,.profile-banner picture,.invitation-banner img,.farewell-banner picture').forEach(el => targets.set(el, 'rise'));
-  document.querySelectorAll('.story-photo,.tea-photo').forEach((el, i) => targets.set(el, i ? 'right' : 'left'));
+  document.querySelectorAll('.story-photo,.tea-photo,.steps-photo').forEach((el, i) => targets.set(el, i ? 'right' : 'left'));
   document.querySelectorAll('.benefit-art,.voice-avatar').forEach(el => targets.set(el, 'pop'));
   // The first-view banner contains lettering, so reveal it without cropping.
   const hero = document.querySelector('.fv-frame picture');
